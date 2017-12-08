@@ -16,6 +16,12 @@ A web application for scheduling music lessons
 - PATCH lessons/id
 - DELETE lessons/id
 
+- GET skill_level/
+- GET skill_level/id
+- POST skill_level/
+- PATCH skill_level/id
+- DELETE skill_level/id
+
 - GET /token
 - POST /token
 - DELETE /token

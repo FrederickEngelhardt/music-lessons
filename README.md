@@ -4,21 +4,21 @@ A web application for scheduling music lessons
 
 ## Routes
 
--GET users/
--GET users/id
--POST users/
--PATCH users/id
--DELETE users/id
+- GET users/
+- GET users/id
+- POST users/
+- PATCH users/id
+- DELETE users/id
 
--GET lessons/
--GET lessons/id
--POST lessons/
--PATCH lessons/id
--DELETE lessons/id
+- GET lessons/
+- GET lessons/id
+- POST lessons/
+- PATCH lessons/id
+- DELETE lessons/id
 
--GET /token
--POST /token
--DELETE /token
+- GET /token
+- POST /token
+- DELETE /token
 
 ## Trello
 
@@ -27,12 +27,12 @@ A web application for scheduling music lessons
 
 ## Style Guide
 
--Materialize
--Font - YuKyokasho
--Pod Colors - #FAAD00 - yellow
--Background - #333030 - dark grey
--Font color - white/ black where obvious
--Logo border & background graphic - #95989A
+- Materialize
+- Font - YuKyokasho
+- Pod Colors - #FAAD00 - yellow
+- Background - #333030 - dark grey
+- Font color - white/ black where obvious
+- Logo border & background graphic - #95989A
 
 ## Wire Frames
 

@@ -10,12 +10,6 @@ POST users/
 PATCH users/id
 DELETE users/id
 
-GET instructors/
-GET instructors/id
-POST instructors/
-PATCH instructors/id
-DELETE instructors/id
-
 GET lessons/
 GET lessons/id
 POST lessons/

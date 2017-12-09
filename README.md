@@ -2,6 +2,10 @@
 
 A web application for scheduling music lessons
 
+## Installation
+
+- Clone the repository and run npm install
+
 ## Routes
 
 - GET users/
@@ -43,3 +47,8 @@ A web application for scheduling music lessons
 ## Wire Frames
 
 [Wire Frames](https://xd.adobe.com/view/53e24b1a-cddb-4d2e-8578-5ea2c928b772/)
+
+## JWT_KEY
+```shell
+bash -c 'echo "JWT_KEY="$(openssl rand -base64 64)' > .env
+```

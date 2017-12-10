@@ -1,5 +1,8 @@
 'use strict'
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -15,16 +18,20 @@ app.use(cookieParser())
 app.use(express.static('public'))
 
 const lessons = require('./routes/lessons')
-// const skill_levels = require('./routes/skill_levels')
-// const users = require('./routes/users')
+const skill_levels = require('./routes/skill_levels')
+const users = require('./routes/users')
 // const token = require('./routes/token')
 
 app.use(lessons)
-// app.use(skill_levels)
-// app.use(users)
+app.use(skill_levels)
+app.use(users)
 // app.use(token)
 
-app.use((err, req, res, next) => {
+app.use((_req, res) => {
+  res.sendStatus(404)
+})
+
+app.use((err, _req, res, _next) => {
   if (err.output && err.output.statusCode) {
     return res
       .status(err.output.statusCode)

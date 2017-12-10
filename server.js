@@ -27,20 +27,15 @@ app.use(skill_levels)
 app.use(users)
 // app.use(token)
 
-app.use((_req, res) => {
+app.use((req, res, next) => {
   res.sendStatus(404)
 })
 
-app.use((err, _req, res, _next) => {
-  if (err.output && err.output.statusCode) {
-    return res
-      .status(err.output.statusCode)
-      .set('Content-Type', 'text/plain')
-      .send(err.message)
-  }
-  console.error(err.stack)
-  res.sendStatus(500)
+app.use((err, req, res, next) => {
+  const status = err.status || 500
+  res.status(status).send(err.message)
 })
+
 app.listen(port, () => console.log(`Listening on port ${port}`))
 
 module.exports = app

@@ -1,10 +1,9 @@
 'use strict'
 
-const bcrypt = require('bcrypt')
-const boom = require('boom')
 const express = require('express')
+const knex = require('../knex')
 const jwt = require('jsonwebtoken')
-const knex = require('knex')
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
 router.get('/token', (req, res) => {

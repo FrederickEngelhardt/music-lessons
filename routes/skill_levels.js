@@ -2,7 +2,8 @@
 
 const express = require('express')
 const knex = require('../knex')
-const boom = require('boom')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
 router.get('/skill_levels', (req, res, next) => {
@@ -18,14 +19,14 @@ router.get('/skill_levels', (req, res, next) => {
 router.get('/skill_levels/:id', (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
-    return next(boom.create(404, `Not Found`))
+    return next({ status: 404, message: `Not Found` })
   }
   return knex('skill_levels')
     .where({id})
     .first()
     .then(data => {
       if (!data) {
-        return next(boom.create(404, `Not Found`))
+        return next({ status: 404, message: `Not Found` })
       }
       res.status(200).json(data)
     })
@@ -38,7 +39,7 @@ router.post('/skill_levels', (req, res, next) => {
   const { skill_level } = req.body
   const newLevel = { skill_level }
   if (!skill_level || skill_level.trim()) {
-    return next(boom.create(400, `Skill level must not be blank`))
+    return next({ status: 400, message: `Skill level must not be blank` })
   }
   return knex.insert(newLevel, '*')
     .into('skill_levels')
@@ -55,14 +56,14 @@ router.patch('/skill_levels/:id', (req, res, next) => {
   const { skill_level } = req.body
   const newLevel = { skill_level }
   if (Number.isNaN(id)) {
-    return next(boom.create(404, `Not Found`))
+    return next({ status: 404, message: `Not Found` })
   }
   knex('skill_levels')
     .where({id})
     .first()
     .then(data => {
       if (!data) {
-        return next(boom.create(404, `Not Found`))
+        return next({ status: 404, message: `Not Found` })
       }
       return knex('skill_levels')
         .update(newLevel, '*')
@@ -79,7 +80,7 @@ router.patch('/skill_levels/:id', (req, res, next) => {
 router.delete('/skill_levels/:id', (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
-    return next(boom.create(404, `Not Found`))
+    return next({ status: 404, message: `Not Found` })
   }
   return knex('skill_levels')
     .where({id})
@@ -87,7 +88,7 @@ router.delete('/skill_levels/:id', (req, res, next) => {
     .del()
     .then(data => {
       if (!data) {
-        return next(boom.create(404, `Not Found`))
+        return next({ status: 404, message: `Not Found` })
       }
       res.status(204).json(data)
     })

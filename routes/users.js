@@ -1,10 +1,9 @@
 'use strict'
 
-const bcrypt = require('bcrypt')
-const boom = require('boom')
 const express = require('express')
-const jwt = require('jsonwebtoken')
 const knex = require('../knex')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
 router.get('/users', (req, res, next) => {
@@ -20,12 +19,15 @@ router.get('/users', (req, res, next) => {
 router.get('/users/:id', (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
-    return next(boom.create(404, `Not Found`))
+    return next({ status: 404, message: `Not Found` })
   }
   return knex('users')
     .where({id})
     .first()
     .then(data => {
+      if (!data) {
+        return next({ status: 404, message: `Not Found` })
+      }
       res.status(200).json(data)
     })
     .catch(err => {
@@ -38,22 +40,22 @@ router.post('/users', (req, res, next) => {
 
   const re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
-    return next(boom.create(400, `Password must contain one upper-case letter, one number, and one special character`))
+    return next({ status: 400, message: `Password must contain one upper-case letter, one number, and one special character` })
   }
   if (!email_address) {
-    return next(boom.create(400, `Email must not be blank`))
+    return next({ status: 400, message: `Email must not be blank` })
   }
-  knex('users')
+  return knex('users')
     .where({email_address})
     .first()
     .then(user => {
-      if (user) {
-        return res.sendStatus(400)
+      if (!user) {
+        return next({ status: 400, message: `Email already exists` })
       }
       return bcrypt.hash(password, 10)
     })
     .then(hashed_password => {
-      const { first_name, last_name, phone_number, skill_level_id, bio} = req.body
+      const { first_name, last_name, phone_number, skill_level_id, bio } = req.body
       const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
 
       return knex.insert(insert, '*')
@@ -83,7 +85,7 @@ router.post('/users', (req, res, next) => {
 router.delete('/users/:id', (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
-    return next(boom.create(404, `Not Found`))
+    return next({ status: 404, message: `Not Found` })
   }
   return knex('users')
     .where({id})

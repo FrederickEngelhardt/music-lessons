@@ -16,9 +16,5 @@ exports.seed = function(knex, Promise) {
       id: 4,
       skill_level: 'Expert (Instructor)'
     }
-  ]).then(() => {
-    return knex.raw(
-      `SELECT setval('skill_levels_id_seq', (SELECT MAX(id) FROM skill_levels));`
-    )
-  })
+  ])
 };

@@ -37,14 +37,17 @@ router.get('/users/:id', (req, res, next) => {
 
 router.post('/users', (req, res, next) => {
   const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body
-
+  console.log(req.body);
   const re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
+    console.log('FAILED the RE test');
     return next({ status: 400, message: `Password must contain at least one upper-case letter, one number, and one special character` })
   }
   if (!email_address) {
+    console.log('YOur email sucks');
     return next({ status: 400, message: `Email must not be blank` })
   }
+  console.log('made it');
   return knex('users')
     .where({email_address})
     .first()
@@ -53,7 +56,7 @@ router.post('/users', (req, res, next) => {
     })
     .then(hashed_password => {
       const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
-
+      console.log(insert);
       return knex.insert(insert, '*')
         .into('users')
     })

@@ -20,6 +20,11 @@ const modifyAccount = (id, data) => {
      data: JSON.stringify(data)
   });
 }
-
+const getAccount = (id) => {
+  $.get(`users/i`, result => {
+    console.log(result);
+  })
+}
+console.log(getAccount(1));
 /* Tests */
 console.log(modifyAccount(1, {first_name: "I have Been Modified"}))

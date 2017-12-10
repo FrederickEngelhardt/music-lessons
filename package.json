@@ -2,7 +2,7 @@
   "name": "music-lessons",
   "version": "1.0.0",
   "description": "A web application for scheduling music lessons",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha",
     "start": "node server.js"

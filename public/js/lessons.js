@@ -67,16 +67,16 @@ const lessonDelete = (...id) => {
 }
 
 /* TESTs */
-// const sendInfo = {
-//   user_client_id: "1",
-//   user_instructor_id: "2",
-//   cost: "$60",
-//   date_time: "12/23/17 1:00PM",
-//   lesson_name: "Intro to Electric Guitar",
-//   location: "CU School of Music",
-// }
-// console.log(ajaxGetLessons())
-// console.log(ajaxGetId(1))
-// lessonPost(sendInfo)
-// lessonPatch(1, {cost: 90, date_time: "FredTime"})
-// lessonDelete(1)
+const sendInfo = {
+  user_client_id: "1",
+  user_instructor_id: "2",
+  cost: "$60",
+  date_time: "12/23/17 1:00PM",
+  lesson_name: "Intro to Electric Guitar",
+  location: "CU School of Music",
+}
+console.log(ajaxGetLessons())
+console.log(ajaxGetLessonId(3))
+lessonPost(sendInfo)
+lessonPatch(1, {cost: 90, date_time: "FredTime"})
+lessonDelete(2)

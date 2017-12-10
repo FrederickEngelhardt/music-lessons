@@ -36,11 +36,12 @@ router.get('/users/:id', (req, res, next) => {
 })
 
 router.post('/users', (req, res, next) => {
-  const { email_address, password } = req.body
+  
+  const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body
 
   const re = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
-    return next({ status: 400, message: `Password must contain one upper-case letter, one number, and one special character` })
+    return next({ status: 400, message: `Password must contain at least one upper-case letter, one number, and one special character` })
   }
   if (!email_address) {
     return next({ status: 400, message: `Email must not be blank` })
@@ -50,18 +51,18 @@ router.post('/users', (req, res, next) => {
     .first()
     .then(user => {
       if (!user) {
-        return next({ status: 400, message: `Email already exists` })
-      }
-      return bcrypt.hash(password, 10)
-    })
-    .then(hashed_password => {
-      const { first_name, last_name, phone_number, skill_level_id, bio } = req.body
-      const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
+        const hashed_password = bcrypt.hash(password, 10)
 
-      return knex.insert(insert, '*')
-        .into('users')
+        const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
+
+        return knex.insert(insert, '*')
+          .into('users')
+      }
     })
     .then(data => {
+      if (!data) {
+        return next({ status: 400, message: `User account already exists` })
+      }
       const user = data[0]
       const claim = { user_id: user.id }
       const token = jwt.sign(claim, process.env.JWT_KEY, {

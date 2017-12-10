@@ -8,9 +8,9 @@ const router = express.Router()
 
 const authorize = (req, res, next) => {
   jwt.verify(req.cookies.token, process.env.JWT_KEY, (err, payload) => {
-    if (err) {
-      return next({ status: 401, message: `Unauthorized` })
-    }
+    // if (err) {
+    //   return next({ status: 401, message: `Unauthorized` })
+    // }
     req.claim = payload
     next()
   })

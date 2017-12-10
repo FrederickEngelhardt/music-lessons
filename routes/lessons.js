@@ -3,13 +3,21 @@
 const express = require('express')
 const knex = require('../knex')
 const boom = require('boom')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
-// const authorize = (req, res, next) => {
-//   jwt.verify(req.cookies.token, process.env.JWT_KEY)
-// }
+const authorize = (req, res, next) => {
+  jwt.verify(req.cookies.token, process.env.JWT_KEY, (err, payload) => {
+    if (err) {
+      return next(boom.create(401, `Unauthorized`))
+    }
+    req.claim = payload
+    next()
+  })
+}
 
-router.get('/lessons', (req, res, next) => {
+router.get('/lessons', authorize, (req, res, next) => {
   return knex('lessons').orderBy('date_time', 'desc')
     .then(data => {
       res.status(200).json(data)
@@ -19,7 +27,7 @@ router.get('/lessons', (req, res, next) => {
     })
 })
 
-router.get('/lessons/:id', (req, res, next) => {
+router.get('/lessons/:id', authorize, (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
     return next(boom.create(404, `Not Found`))
@@ -38,25 +46,25 @@ router.get('/lessons/:id', (req, res, next) => {
     })
 })
 
-router.post('/lessons', (req, res, next) => {
+router.post('/lessons', authorize, (req, res, next) => {
   const { user_client_id, user_instructor_id, location, cost, date_time, lesson_name } = req.body
   const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
-  if (!user_client_id) {
+  if (!user_client_id || user_client_id.trim()) {
     return next(boom.create(400, `Instructor ID must not be blank`))
   }
-  if (!user_instructor_id) {
+  if (!user_instructor_id || user_instructor_id.trim()) {
     return next(boom.create(400, `Instructor ID must not be blank`))
   }
-  if (!location) {
+  if (!location || location.trim()) {
     return next(boom.create(400, `Location must not be blank`))
   }
-  if (!cost) {
+  if (!cost || cost.trim()) {
     return next(boom.create(400, `Cost must not be blank`))
   }
-  if (!date_time) {
+  if (!date_time || date_time.trim()) {
     return next(boom.create(400, `Date and time must not be blank`))
   }
-  if (!lesson_name) {
+  if (!lesson_name || lesson_name.trim()) {
     return next(boom.create(400, `Lesson must not be blank`))
   }
   return knex.insert(newLesson, '*')
@@ -69,7 +77,7 @@ router.post('/lessons', (req, res, next) => {
     })
 })
 
-router.patch('/lessons/:id', (req, res, next) => {
+router.patch('/lessons/:id', authorize, (req, res, next) => {
   const id = parseInt(req.params.id)
   const { user_client_id, user_instructor_id, location, cost, date_time, lesson_name } = req.body
   const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
@@ -95,7 +103,7 @@ router.patch('/lessons/:id', (req, res, next) => {
     })
 })
 
-router.delete('/lessons/:id', (req, res, next) => {
+router.delete('/lessons/:id', authorize, (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {
     return next(boom.create(404, `Not Found`))

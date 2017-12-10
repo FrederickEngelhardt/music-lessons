@@ -9,9 +9,9 @@ const router = express.Router()
 
 const authorize = (req, res, next) => {
   jwt.verify(req.cookies.token, process.env.JWT_KEY, (err, payload) => {
-    if (err) {
-      return next(boom.create(401, `Unauthorized`))
-    }
+    // if (err) {
+    //   return (boom.create(401, `Unauthorized`))
+    // }
     req.claim = payload
     next()
   })
@@ -47,24 +47,39 @@ router.get('/lessons/:id', authorize, (req, res, next) => {
 })
 
 router.post('/lessons', authorize, (req, res, next) => {
-  const { user_client_id, user_instructor_id, location, cost, date_time, lesson_name } = req.body
-  const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
-  if (!user_client_id || user_client_id.trim()) {
+  console.log("THis is the body", req.body);
+  const {
+    user_instructor_id,
+    user_client_id,
+    location,
+    cost,
+    date_time,
+    lesson_name
+    } = req.body
+  const newLesson = {
+    user_instructor_id,
+    location,
+    user_client_id,
+    cost,
+    date_time,
+    lesson_name
+  }
+  if (!user_client_id || user_client_id.trim() === "") {
     return next(boom.create(400, `Instructor ID must not be blank`))
   }
-  if (!user_instructor_id || user_instructor_id.trim()) {
+  if (!user_instructor_id || user_instructor_id.trim() === "") {
     return next(boom.create(400, `Instructor ID must not be blank`))
   }
-  if (!location || location.trim()) {
+  if (!location || location.trim() === "") {
     return next(boom.create(400, `Location must not be blank`))
   }
-  if (!cost || cost.trim()) {
+  if (!cost || cost.trim() === "") {
     return next(boom.create(400, `Cost must not be blank`))
   }
-  if (!date_time || date_time.trim()) {
+  if (!date_time || date_time.trim() === "") {
     return next(boom.create(400, `Date and time must not be blank`))
   }
-  if (!lesson_name || lesson_name.trim()) {
+  if (!lesson_name || lesson_name.trim() === "") {
     return next(boom.create(400, `Lesson must not be blank`))
   }
   return knex.insert(newLesson, '*')

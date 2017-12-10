@@ -48,22 +48,22 @@ router.get('/lessons/:id', authorize, (req, res, next) => {
 router.post('/lessons', authorize, (req, res, next) => {
   const { user_client_id, user_instructor_id, location, cost, date_time, lesson_name } = req.body
   const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
-  if (!user_client_id || user_client_id.trim()) {
+  if (!user_client_id) {
     return next({ status: 400, message: `Instructor ID must not be blank` })
   }
-  if (!user_instructor_id || user_instructor_id.trim()) {
+  if (!user_instructor_id) {
     return next({ status: 400, message: `Instructor ID must not be blank` })
   }
-  if (!location || location.trim()) {
+  if (!location) {
     return next({ status: 400, message: `Location must not be blank` })
   }
-  if (!cost || cost.trim()) {
+  if (!cost) {
     return next({ status: 400, message: `Cost must not be blank` })
   }
-  if (!date_time || date_time.trim()) {
+  if (!date_time) {
     return next({ status: 400, message: `Date and time must not be blank` })
   }
-  if (!lesson_name || lesson_name.trim()) {
+  if (!lesson_name) {
     return next({ status: 400, message: `Lesson must not be blank` })
   }
   return knex.insert(newLesson, '*')

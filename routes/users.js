@@ -110,7 +110,7 @@ router.patch('/users/:id', (req, res, next) => {
     .then(data => {
       res.status(201).json(data)
     })
-    .catch(err => {
+    .catch((err) => {
       next(err)
     })
 })

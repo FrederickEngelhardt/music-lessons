@@ -1,3 +1,18 @@
+html {
+  height: 100%;
+}
+/*body {
+  background-color: #EEEEEE;
+font-family: 'Helvetica Neue', Arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+font-size: x-small;
+color: #666666;
+background: url("../images/guitarbg.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}*/
 .title {
   padding: 50px;
 }
@@ -5,4 +20,39 @@
 .homebutton {
   width: 50%;
   margin: 20px;
+}
+
+
+.buttonAlign {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%) -webkit-transform: translate(-50%, -50%) -ms-transform: translate(-50%, -50%) -o-transform: translate(-50%, -50%) transform: translate(-50%, -50%);
+}
+
+
+body {
+  background: #f06d06;
+  font-size: 80%;
+}
+
+main {
+  background: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  resize: vertical;
+  overflow: auto;
+}
+
+main div {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 100px;
+  margin-top: -70px;
+  background: black;
+  color: white;
+  padding: 20px;
 }

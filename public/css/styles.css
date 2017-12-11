@@ -134,5 +134,10 @@ label {
 
 }
 #browse_instructors {
-  line-height: 200%;
+  line-height: 25px;
+}
+.row.home-menu{
+  position: relative;
+  top: 10px;
+  line-height: 60px;
 }

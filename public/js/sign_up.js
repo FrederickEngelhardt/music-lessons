@@ -31,13 +31,7 @@ const createAccount = (data='') => {
                }
            },
            data: JSON.stringify(data)
-        })
-        .done(() => {
-          window.location.href = '/home.html'
-        })
-        .fail(($xhr) => {
-          Materialize.toast('Invalid', 3000)
-        })
+        });
 }
 $(document).ready( () => {
   $('.modal').modal();

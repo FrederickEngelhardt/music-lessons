@@ -12,17 +12,14 @@ html {
 }
 
 body {
-  background-color: #EEEEEE;
-  /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
-  -webkit-font-smoothing: antialiased;
-  font-size: x-small;
-  color: #666666;
-  background: url("../images/background.png");
-   /*no-repeat center center fixed;*/
+  background: url("../images/background.png") no-repeat center center fixed;
+  /*background-color: #333030;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  font-size: x-small;
 }
 .title {
   padding: 50px;
@@ -112,6 +109,8 @@ main .container {
   border-radius: 25px;
   background-color: #FAAD00;
 }
+
+/* Beginning of home.html*/
 nav {
   background-color: #FAAD00;
   padding-left: 0%;
@@ -134,10 +133,19 @@ label {
 
 }
 #browse_instructors {
-  line-height: 25px;
+  line-height: 28px;
+}
+#account_preferences {
+  line-height: 28px;
+}
+text.button-text {
+  position: relative;
+  top: 10px;
 }
 .row.home-menu{
   position: relative;
   top: 10px;
   line-height: 60px;
 }
+
+/* End of home menu*/

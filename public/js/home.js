@@ -1,3 +1,28 @@
+(function() {
+  'use strict'
+
+  $.getJSON('/token')
+    .done(loggedIn => {
+      if (loggedIn) {
+        $('#logout').on('click', () => {
+          const options = {
+            dataType: 'json',
+            type: 'DELETE',
+            url: '/token'
+          }
+          $.ajax(options)
+            .done(() => {
+              window.location.href = '/index.html'
+            })
+            .fail(() => {
+              Materialize.toast('Unable to log out', 3000)
+            })
+        })
+      }
+    })
+
+})()
+
 const instructorFields = () => {
   const lessonsButton = `<div class='row home-menu center'>
         <div class="center col s12 m6 l6">

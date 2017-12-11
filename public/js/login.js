@@ -1,17 +1,10 @@
-$(document).ready(() => {
-  $('.enterbutton').on('submit', () => {
+$(document).ready(function() {
+  $('#loginScreenButton').on('click', (event) => {
     event.preventDefault()
-
-    const email_address = $('#email').val().trim()
+    const email_address = $('#email').val()
     const password = $('#password').val()
+    console.log(email_address, password);
 
-    if (!email) {
-      return Materialize.toast('Email must not be blank', 3000);
-    }
-
-    if (!password) {
-      return Materialize.toast('Password must not be blank', 3000);
-    }
     const options = {
       contentType: 'application/json',
       data: JSON.stringify({ email_address, password }),
@@ -23,10 +16,8 @@ $(document).ready(() => {
       .done(() => {
         window.location.href = '/home.html'
       })
-      .fail(($xhr) => {
-        Materialize.toast('Invalid', 3000)
+      .fail($xhr => {
+        Materialize.toast($xhr.responseText, 3000)
       })
   })
-$(document).ready(()=>{
-  $('.modal').modal();
 })

@@ -12,14 +12,17 @@ html {
 }
 
 body {
-  background: url("../images/background.png") no-repeat center center fixed;
-  /*background-color: #333030;*/
+  background-color: #EEEEEE;
+  -webkit-font-smoothing: antialiased;
+  font-size: x-small;
+  color: #666666;
+  background: url("../images/background.png")
+  no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-font-smoothing: antialiased;
-  font-size: x-small;
+  background-repeat:;
 }
 .title {
   padding: 50px;
@@ -45,8 +48,10 @@ main {
   overflow: auto;
 }
 
+
 h1.index {
-  position: relative;
+  display: flex;
+  justify-content: center;
   top: -8px;
   padding-top: 56px;
   font-size: 80px;
@@ -132,6 +137,71 @@ label {
 #loginScreenButton {
 
 }
+
+
+/*****schedule*****/
+
+
+h1.title {
+  display:flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center;
+  /*top: -8px;*/
+  padding-top: 10px;
+  font-size: 80px;
+  height:10px;
+}
+#scheduleLogo{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+}
+#schedule{
+  position: relative;
+  top: 20px;
+  background-color: white;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#week{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+
+}
+#previous_week{
+  display: flex;
+  justify-content: center;
+  background-color: orange;
+  height: 25px;
+  border-radius: 12px;
+  width: 10px;
+  height: 40px;
+  font-size: 100px;
+}
+#current_week{
+  line-height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  font-size: 18px;
+  height: 45px;
+}
+#next_week{
+  display: flex;
+  justify-content: center;
+  width: 18px;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: orange;
+  height: 40px;
+
 #browse_instructors {
   line-height: 28px;
 }

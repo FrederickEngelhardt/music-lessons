@@ -88,6 +88,33 @@ router.post('/users', (req, res, next) => {
     })
 })
 
+router.patch('/users/:id', (req, res, next) => {
+  const id = parseInt(req.params.id)
+  if (Number.isNaN(id)) {
+    return next({ status: 400, message: `Invalid ID` })
+  }
+  return knex('users')
+    .where({id})
+    .first()
+    .then(user => {
+      if (!user) {
+        return next({ status: 404, message: `User not found` })
+      }
+      const { phone_number, email_address, bio } = req.body
+      const insert = { phone_number, email_address, bio }
+
+      return knex('users')
+        .update(insert, '*')
+        .where({id})
+    })
+    .then(data => {
+      res.status(201).json(data)
+    })
+    .catch(err => {
+      next(err)
+    })
+})
+
 router.delete('/users/:id', (req, res, next) => {
   const id = parseInt(req.params.id)
   if (Number.isNaN(id)) {

@@ -1,20 +1,27 @@
 html {
   height: 100%;
 }
-/*body {
+
+body {
   background-color: #EEEEEE;
-font-family: 'Helvetica Neue', Arial, sans-serif;
--webkit-font-smoothing: antialiased;
-font-size: x-small;
-color: #666666;
-background: url("../images/guitarbg.jpg") no-repeat center center fixed;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
-}*/
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: x-small;
+  color: #666666;
+  background: url("../images/guitarbg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .title {
   padding: 50px;
+}
+#slogan {
+  font-family: Dekko;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .homebutton {
@@ -22,22 +29,15 @@ background-size: cover;
   margin: 20px;
 }
 
-
+/*
 .buttonAlign {
   position: absolute;
   left: 50%;
   top: 50%;
   -moz-transform: translate(-50%, -50%) -webkit-transform: translate(-50%, -50%) -ms-transform: translate(-50%, -50%) -o-transform: translate(-50%, -50%) transform: translate(-50%, -50%);
-}
-
-
-body {
-  background: #f06d06;
-  font-size: 80%;
-}
+}*/
 
 main {
-  background: white;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -45,14 +45,45 @@ main {
   overflow: auto;
 }
 
-main div {
+h1 {
+  font-family: Dekko;
+  padding-top: 40px;
+  font-size: 80px;
+}
+
+main .container {
   position: absolute;
   top: 50%;
   left: 20px;
   right: 20px;
   height: 100px;
   margin-top: -70px;
-  background: black;
+  /*background: black;*/
   color: white;
   padding: 20px;
+}
+
+.btn-name {
+  position: relative;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 50;
+  margin-top: -70px;
+  /*background: black;*/
+  color: white;
+  padding: 20px;
+}
+
+.btn {
+  font-family: Dekko;
+  background-color: #FAAD00;
+  height: 60px;
+  width: 200px;
+  border-radius: 35px;
+}
+
+.login-button {
+  position: relative;
+  top: 10%;
 }

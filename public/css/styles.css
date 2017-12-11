@@ -9,15 +9,10 @@ a {
 }
 html {
   height: 100%;
-  /*background: url("../images/background.png");*/
 }
-/*.primary_container{
-  background: url("../images/background.png");
-  background-repeat: no-repeat;
-}*/
+
 body {
   background-color: #EEEEEE;
-  /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
   -webkit-font-smoothing: antialiased;
   font-size: x-small;
   color: #666666;
@@ -189,7 +184,7 @@ h1.title {
   line-height: 20px;
   margin-left: 5px;
   margin-right: 5px;
-  border-radius: 24px;
+  border-radius: 12px;
   display: flex;
   justify-content: center;
   width: 150px;

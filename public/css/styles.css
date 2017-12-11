@@ -24,7 +24,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .title {
   padding: 50px;
 }
@@ -133,4 +132,7 @@ label {
 }
 #loginScreenButton {
 
+}
+#browse_instructors {
+  line-height: 200%;
 }

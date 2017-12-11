@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>login</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="./js/instructors.js"></script>
   <link rel="stylesheet" href="./css/styles.css">
-  </head>
-  <body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="./js/login.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="left brand-logo"><i class="material-icons"><img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>Schedule</a>
+      <ul class="right">
+        <li><a href="index.html"><i class="material-icons">home</i></a></li>
+        <li><a href="schedule.html"><i class="material-icons">refresh</i></a></li>
+        <!-- Trigger modal1 -->
+        <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">help</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row center">
+    <h1 class="title header center white-text">JAZZED</h1>
+  </div>
+  <div class='row center'>
+    <button class="homebutton btn waves-effect waves-light" id='scheduleLogo' type="submit" name="action">Browse Instructors</button>
+  </div>
+  <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="images/nigel.jpg">
+          <span class="card-title black">Nigel Filippppino</span>
+        </div>
+        <div class="card-content">
+          <p>I am a very simple mind. I am good at containing small bits of deportation. I am convenient because I require little markings to use indifferently.</p>
+        </div>
+        <div class="card-action">
+          <a href="lessons.html">Book a lesson</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+
 </html>

@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>JAZZED</title>
-  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">Home</script>
 
 <head>
   <meta charset="utf-8">
-  <title></title>
-
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="./css/styles.css">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAZZED</title>
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
     Home
   </script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="./js/home.js"></script>
-  <script src="./js/profile.js"></script>
-</head>
 
-<body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="left brand-logo"><i class="material-icons">        <img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i></a>
-      <a href="#" data-activates="mobile-demo" class=" right button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right">
-        <li><a href="home.html"><i class="material-icons">home</i></a></li>
-        <!-- Trigger modal3 -->
-        <li><a class="waves-effect waves-light modal-trigger" href="#modal3"><i class="material-icons">help</i></a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="home.html">Home</a></li>
-  <li><a id="logout" href="index.html">Logout</a></li>
-  <li><a href="collapsible.html">Schedule</a></li>
-  <!-- <li><a href="mobile.html">Mobile</a></li> -->
-</ul>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+      Home
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="./js/home.js"></script>
+    <script src="./js/profile.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="left brand-logo"><i class="material-icons">        <img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i></a>
+        <a href="#" data-activates="mobile-demo" class=" right button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="right">
+          <li><a href="home.html"><i class="material-icons">home</i></a></li>
+          <!-- Trigger modal3 -->
+          <li><a class="waves-effect waves-light modal-trigger" href="#modal3"><i class="material-icons">help</i></a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a id="logout" href="index.html">Logout</a></li>
+        </ul>
+
+      </div>
+    </nav>
+    <div class="row nav-align center">
+      <div class="white-text">
+        <h1 class="navigation">JAZZED</h1></div>
+      <div class="row">
+        <h5 id="slogan" class="white-text">MUSIC LESSONS MADE EASY</h5>
+      </div>
     </div>
-  </nav>
-  <div class="row nav-align center">
-    <div class="white-text">
-      <h1 class="navigation">JAZZED</h1></div>
-    <div class="row">
-      <h5 id="slogan" class="white-text">MUSIC LESSONS MADE EASY</h5>
-    </div>
-  </div>
-  <div class="container">
-    <div class='row home-menu center'>
-      <div class="center col s12 m6 l6">
-        <a class="home-button btn waves-effect waves-light" type="submit" name="action">
+    <div class="container">
+      <div class='row home-menu center'>
+        <div class="center col s12 m6 l6">
+          <a class="home-button btn waves-effect waves-light" type="submit" name="action">
           <text class="button-text">My Schedule</text></a>
+        </div>
       </div>
-    </div>
-    <div class="add_lessons"></div>
-    <div class='row home-menu center'>
-      <div class="center col s12 m6 l6">
-        <a id="browse_instructors" class="home-button btn waves-effect waves-light" type="submit" name="action" href="instructors.html">
+      <div class="add_lessons"></div>
+      <div class='row home-menu center'>
+        <div class="center col s12 m6 l6">
+          <a id="browse_instructors" class="home-button btn waves-effect waves-light" type="submit" name="action" href="instructors.html">
           <text>Browse Instructors</text></a>
+        </div>
       </div>
-    </div>
-    <div class='row home-menu center'>
-      <div class="center col s12 m6 l6">
-        <a id="account_preferences" class="btn waves-effect waves-light modal-trigger" href="#modal4" type="submit" name="action">
+      <div class='row home-menu center'>
+        <div class="center col s12 m6 l6">
+          <a id="account_preferences" class="btn waves-effect waves-light modal-trigger" href="#modal4" type="submit" name="action">
           <text>Account Preferences</text></a>
+        </div>
       </div>
-    </div>
 
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <h4>Welcome to the Home page</h4>
-        <p class="modal-text">Feel free to checkout the lesson schedule. Add your payment method to schedule lessons directly.</p>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-      </div>
-    </div>
-
-    <div id="modal4" class="modal">
-      <div class="modal-content">
-        <div class="row">
-
-          <div class="container">
-            <div class="row card">
-              <div class="col s12 m6 l6">
-                <h5 class="account_preferences_title">Preferences:</h5>
-              </div>
-            </div>
-            <div class="row card">
-              <div class="col s12 m6 l6">
-                <h5 id="first_name" class="left header center grey-text">First Name: </h5>
-              </div>
-            </div>
-            <div class="row card">
-              <h5 id="last_name" class="left header center grey-text">Last Name: </h5>
-            </div>
-            <div class="row card">
-              <h5 id="phone_number" class="left header center grey-text">Phone Number: </h5>
-            </div>
-            <div class="row card">
-              <h5 id="skill_level_id" class="left header center grey-text">Skill Level: </h5>
-            </div>
-            <div class="row card">
-              <h5 id="bio" class="left header center grey-text">Bio: </h5>
-            </div>
-            <div class="row center">
-              <a id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</a>
-            </div>
-          </div>
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <h4>Welcome to the Home page</h4>
+          <p class="modal-text">Feel free to checkout the lesson schedule. Add your payment method to schedule lessons directly.</p>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+      </div>
+
+      <div id="modal4" class="modal">
+        <div class="modal-content">
+          <div class="row">
+
+            <div class="container">
+              <div class="row card">
+                <div class="col s12 m6 l6">
+                  <h5 class="account_preferences_title">Preferences:</h5>
+                </div>
+              </div>
+              <div class="row card">
+                <div class="col s12 m6 l6">
+                  <h5 id="first_name" class="left header center grey-text">First Name: </h5>
+                </div>
+              </div>
+              <div class="row card">
+                <h5 id="last_name" class="left header center grey-text">Last Name: </h5>
+              </div>
+              <div class="row card">
+                <h5 id="phone_number" class="left header center grey-text">Phone Number: </h5>
+              </div>
+              <div class="row card">
+                <h5 id="skill_level_id" class="left header center grey-text">Skill Level: </h5>
+              </div>
+              <div class="row card">
+                <h5 id="bio" class="left header center grey-text">Bio: </h5>
+              </div>
+              <div class="row center">
+                <a id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</body>
+  </body>
 
 </html>

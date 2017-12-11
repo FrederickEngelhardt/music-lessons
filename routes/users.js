@@ -40,6 +40,7 @@ router.post('/users', (req, res, next) => {
   const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body
   const re = /^[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
+    console.log('REGEX failure');
     return next({ status: 400, message: `Password must contain at least one upper-case letter, one number, and one special character` })
   }
   if (!email_address) {

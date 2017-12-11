@@ -17,6 +17,7 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="./js/home.js"></script>
+  <script src="./js/profile.js"></script>
 </head>
 
 <body>
@@ -24,16 +25,16 @@
     <div class="nav-wrapper">
       <a href="#!" class="left brand-logo"><i class="material-icons">        <img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>
           Home</a>
-          <a href="#" data-activates="mobile-demo" class=" right button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class=" right button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right">
-        <!-- Trigger modal1 -->
+        <!-- Trigger modal3 -->
         <li><a class="waves-effect waves-light modal-trigger" href="#modal3"><i class="material-icons">help</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="home.html">Home</a></li>
-  <li><a id="logout" href="index.html">Logout</a></li>
-  <li><a href="#">Schedule</a></li>
-</ul>
+        <li><a id="logout" href="index.html">Logout</a></li>
+        <li><a href="#">Schedule</a></li>
+      </ul>
     </div>
   </nav>
   <div class="row nav-align center">
@@ -52,12 +53,12 @@
     <div class="add_lessons"></div>
     <div class='row home-menu center'>
       <div class="center col s12 m6 l6">
-        <button id="browse_instructors" class="btn waves-effect waves-light" type="submit" name="action">Browse Instructors</button>
+        <button id="browse_instructors" class="btn waves-effect waves-light" type="submit" name="action" href="./instructors.html">Browse Instructors</button>
       </div>
     </div>
     <div class='row home-menu center'>
       <div class="center col s12 m6 l6">
-        <button id="browse_instructors" class="btn waves-effect waves-light" type="submit" name="action">Account Preferences</button>
+        <button id="browse_instructors" class="btn waves-effect waves-light modal-trigger" href="#modal4" type="submit" name="action">Account Preferences</button>
       </div>
     </div>
 
@@ -70,7 +71,43 @@
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
       </div>
     </div>
-  </div>
+
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <h4>Update your information here:</h4>
+        <div class="row center">
+          <h5 id="first_name" class="header center grey-text">First Name: </h5>
+        </div>
+        <div class="row center">
+          <h5 id="last_name" class="header center grey-text">Last Name: </h5>
+        </div>
+        <div class="row center">
+          <h5 id="phone_number" class="header center grey-text">Phone Number: </h5>
+        </div>
+        <div class="row center">
+          <h5 id="skill_level_id" class="header center grey-text">Skill Level: </h5>
+        </div>
+        <div class="row center">
+          <h5 id="bio" class="header center grey-text">Bio: </h5>
+        </div>
+        <div class="row center">
+          <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+        </div>
+
+
+
+
+
+
+
+
+
+        <p class="modal-text">Feel free to checkout the lesson schedule. Add your payment method to schedule lessons directly.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
   </div>
 </body>
 

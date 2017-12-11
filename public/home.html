@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8">
     <title>JAZZED</title>
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">Home</script>
+=======
+>>>>>>> 776a44eb285b66bf7dd71067c1c25c99f5609b5c
 
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    Home
+  </script>
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="./js/home.js"></script>
-  <link rel="stylesheet" href="./css/styles.css">
-  </head>
-  <body>
-    <div class="nav" role="navigation">
-      <h5 class="left-align grey-text" href="index.html">home</h5>
-      <h5 class="right-align grey-text" href="index.html">log out</h5>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="left brand-logo"><i class="material-icons">        <img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>
+          Home</a>
+          <a href="#" data-activates="mobile-demo" class=" right button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right">
+        <!-- Trigger modal1 -->
+        <li><a class="waves-effect waves-light modal-trigger" href="#modal3"><i class="material-icons">help</i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="badges.html">Home</a></li>
+  <li><a id="logout" href="index.html">Logout</a></li>
+  <li><a href="collapsible.html">Schedule</a></li>
+  <!-- <li><a href="mobile.html">Mobile</a></li> -->
+</ul>
     </div>
-    <div class="row center">
-      <h1 class="title header center grey-text">JAZZED</h1>
+  </nav>
+  <div class="row nav-align center">
+    <div class="white-text">
+      <h1 class="navigation">JAZZED</h1></div>
+    <div class="row">
+      <h5 id="slogan" class="white-text">MUSIC LESSONS MADE EASY</h5>
     </div>
-    <div class='row center'>
-      <button class="homebutton btn waves-effect waves-light orange" type="submit" name="action">My Schedule</button>
+  </div>
+  <div class="container">
+    <div class='row home-menu center'>
+      <div class="center col s12 m6 l6">
+        <button class="home-menu btn waves-effect waves-light" type="submit" name="action">My Schedule</button>
+      </div>
     </div>
-    <div class='row center'>
-      <button class="homebutton btn waves-effect waves-light orange" type="submit" name="action">Add Lessons</button>
+    <div class="add_lessons"></div>
+    <div class='row home-menu center'>
+      <div class="center col s12 m6 l6">
+        <button class="home-menu btn waves-effect waves-light" type="submit" name="action">Add Lessons</button>
+      </div>
     </div>
-    <div class='row center'>
-      <button class="homebutton btn waves-effect waves-light orange" type="submit" name="action">Browse Instructors</button>
+    <div class='row home-menu center'>
+      <div class="center col s12 m6 l6">
+        <button id="browse_instructors" class="btn waves-effect waves-light" type="submit" name="action">Browse Instructors</button>
+      </div>
+    </div>
+    <div class='row home-menu center'>
+      <div class="center col s12 m6 l6">
+        <button id="browse_instructors" class="btn waves-effect waves-light" type="submit" name="action">Account Preferences</button>
+      </div>
     </div>
 
-  </body>
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <h4>Welcome to the Home page</h4>
+        <p class="modal-text">Feel free to checkout the lesson schedule. Add your payment method to schedule lessons directly.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
 </html>

@@ -16,7 +16,7 @@ const authorize = (req, res, next) => {
   })
 }
 
-router.get('/lessons', (req, res, next) => {
+router.get('/lessons', authorize, (req, res, next) => {
   return knex('lessons').orderBy('date_time', 'desc')
     .then(data => {
       res.status(200).json(data)

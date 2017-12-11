@@ -24,7 +24,6 @@ body {
   background-size: cover;
   background-repeat:;
 }
-
 .title {
   padding: 50px;
 }
@@ -137,6 +136,7 @@ label {
 
 }
 
+
 /*****schedule*****/
 
 
@@ -199,4 +199,12 @@ h1.title {
   border-radius: 12px;
   background-color: orange;
   height: 40px;
+
+#browse_instructors {
+  line-height: 25px;
+}
+.row.home-menu{
+  position: relative;
+  top: 10px;
+  line-height: 60px;
 }

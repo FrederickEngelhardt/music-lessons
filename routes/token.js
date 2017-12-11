@@ -16,16 +16,13 @@ router.get('/token', (req, res) => {
 })
 
 router.post('/token', (req, res, next) => {
-  const { email_address, password, skill_level_id } = req.body
+  const { email_address, password } = req.body
 
   if (!email_address) {
     return next({ status: 400, message: `Email must not be blank` })
   }
   if (!password) {
     return next({ status: 400, message: `Password must not be blank` })
-  }
-  if (skill_level_id !== 4) {
-    return next({ status: 400, message: `Inadequate skill level` })
   }
   let user;
   return knex('users')
@@ -35,6 +32,7 @@ router.post('/token', (req, res, next) => {
       if (!data) {
         return next({ status: 400, message: `Bad email or password` })
       }
+      user = data
       return bcrypt.compare(password, user.hashed_password)
     })
     .then(() => {
@@ -49,7 +47,7 @@ router.post('/token', (req, res, next) => {
       })
 
       delete user.hashed_password
-      res.status(200).send(user)
+      res.status(201).send(user)
     })
 })
 

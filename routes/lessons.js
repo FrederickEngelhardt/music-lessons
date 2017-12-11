@@ -8,15 +8,15 @@ const router = express.Router()
 
 const authorize = (req, res, next) => {
   jwt.verify(req.cookies.token, process.env.JWT_KEY, (err, payload) => {
-    // if (err) {
-    //   return next({ status: 401, message: `Unauthorized` })
-    // }
+    if (err) {
+      return next({ status: 401, message: `Unauthorized` })
+    }
     req.claim = payload
     next()
   })
 }
 
-router.get('/lessons', authorize, (req, res, next) => {
+router.get('/lessons', (req, res, next) => {
   return knex('lessons').orderBy('date_time', 'desc')
     .then(data => {
       res.status(200).json(data)

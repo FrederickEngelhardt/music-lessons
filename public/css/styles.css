@@ -49,14 +49,22 @@ main {
 }
 
 h1.index {
+  position: relative;
+  top: -8px;
   font-family: Dekko;
   padding-top: 56px;
   font-size: 80px;
 }
 h1.navigation {
+  position: relative;
+  top: -8px;
   font-family: Dekko;
   /*padding-top: 40px;*/
   font-size: 80px;
+}
+.container {
+  position: relative;
+  top: -50px;
 }
 
 main .container {

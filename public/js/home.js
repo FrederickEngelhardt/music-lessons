@@ -34,13 +34,20 @@ const instructorFields = () => {
 }
 
 const checkPrivileges = () => {
-  if (id === 4) {
+  let skill_level
+  $.get('/token', result => {
+    const id = result.cookie.user_id
+    $.get(`/users/${id}`)
+      .done(data => {
+        skill_level = data.skill_level_id
+      })
+  })
+  if (skill_level === 4){
     return instructorFields()
   } else {
     return studentFields()
   }
 }
-const id = 4
 $(document).ready(() => {
   checkPrivileges()
   $('.modal').modal();

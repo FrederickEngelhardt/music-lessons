@@ -40,7 +40,7 @@ const createAccount = (data='') => {
         })
 }
 $(document).ready( () => {
-  console.log('page loaded');
+  $('.modal').modal();
   $('#newAccount').click(function(event){
     event.preventDefault()
     createAccount()

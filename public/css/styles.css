@@ -108,7 +108,7 @@ main .container {
 }
 nav {
   background-color: #FAAD00;
-  padding-left: 5%;
+  padding-left: 0%;
   padding-right: 5%;
 }
 .nav-align {
@@ -116,4 +116,7 @@ nav {
 }
 .modal-text {
   font-size: 200%;
+}
+label {
+  color: white;
 }

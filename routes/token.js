@@ -16,7 +16,7 @@ router.get('/token', (req, res) => {
 })
 
 router.post('/token', (req, res, next) => {
-  const { email_address, password, skill_level_id } = req.body
+  const { email_address, password } = req.body
 
   if (!email_address) {
     return next({ status: 400, message: `Email must not be blank` })

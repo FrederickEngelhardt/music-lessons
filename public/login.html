@@ -1,44 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+<head>
+  <meta charset="utf-8">
+  <title>login</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
+  <link rel="stylesheet" href="./css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="./js/login.js"></script>
-  <link rel="stylesheet" href="./css/styles.css">
-  </head>
-  <body>
-    <div class="row center">
-      <h1 class="title header center grey-text">JAZZED</h1>
-    </div>
 
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="left brand-logo"><i class="material-icons"><img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>Log-in</a>
+      <ul class="right">
+        <li><a href="index.html"><i class="material-icons">home</i></a></li>
+        <li><a href="login.html"><i class="material-icons">refresh</i></a></li>
+        <!-- Trigger modal1 -->
+        <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">help</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row nav-align center">
+    <div class="white-text">
+      <h1 class="navigation">JAZZED</h1></div>
     <div class="row">
-      <div class="col s4">
-      </div>
-      <form class="form col s4">
-        <div class="row center">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
-          </div>
-        </div>
-      </form>
+      <h5 id="slogan" class="white-text">MUSIC LESSONS MADE EASY</h5>
     </div>
+  </div>
 
-    <div class='row center'>
-      <button class="enterbutton btn waves-effect waves-light orange" type="submit" name="action">Enter</button>
+<div class="container">
+  <div class="row">
+    <div class="col s4">
     </div>
-  </body>
+    <form class="form col s12 m6 l6">
+      <div class="row center">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email"><div class="white-text">Email</div></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password"><div class="white-text">Password</div></label>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+  <div class='row center'>
+    <button id="loginScreenButton" class="enterbutton btn waves-effect waves-light" type="submit" name="action">log-in</button>
+  </div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Instructions</h4>
+    <p class="modal-text">Please type in your username and password. Your username will be the email you signed up with.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+</body>
+
 </html>

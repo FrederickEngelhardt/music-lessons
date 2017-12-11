@@ -17,15 +17,15 @@ app.use(cookieParser())
 
 app.use(express.static('public'))
 
-// const lessons = require('./routes/lessons')
-// const skill_levels = require('./routes/skill_levels')
+const lessons = require('./routes/lessons')
+const skill_levels = require('./routes/skill_levels')
 const users = require('./routes/users')
-// const token = require('./routes/token')
-// 
-// app.use(lessons)
-// app.use(skill_levels)
+const token = require('./routes/token')
+
+app.use(lessons)
+app.use(skill_levels)
 app.use(users)
-// app.use(token)
+app.use(token)
 
 app.use((req, res, next) => {
   res.sendStatus(404)

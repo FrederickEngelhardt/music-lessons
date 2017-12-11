@@ -1,31 +1,39 @@
-/*ECHO is on.*/
-
 *{
   margin: 0;
   padding: 0;
   font-family: 'yukyokasho';
   font-weight: 100;
 }
-body {
+a {
+    font-family: 'yukyokasho';
+}
+html {
   height: 100%;
-  align-content: center;
-  background-image: url(../images/background.png);
-  background-repeat: no-repeat;
+}
+
+body {
+  background-color: #EEEEEE;
+  /*font-family: 'Helvetica Neue', Arial, sans-serif;*/
+  -webkit-font-smoothing: antialiased;
+  font-size: x-small;
+  color: #666666;
+  background: url("../images/background.png");
+   /*no-repeat center center fixed;*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
-.nav{
-  margin-top: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 .title {
   padding: 50px;
 }
-#nav {
-  background-color: inherit;
+#slogan {
+  position: relative;
+  top: -20px;
+  font-size: 22px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px white;
 }
 
 .homebutton {
@@ -33,10 +41,96 @@ body {
   margin: 20px;
 }
 
+main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  resize: vertical;
+  overflow: auto;
+}
+
+h1.index {
+  position: relative;
+  top: -8px;
+  padding-top: 56px;
+  font-size: 80px;
+}
+h1.navigation {
+  position: relative;
+  top: -8px;
+  /*padding-top: 40px;*/
+  font-size: 80px;
+}
+.container {
+  position: relative;
+  top: -50px;
+}
+
+main .container {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 100px;
+  margin-top: -70px;
+  /*background: black;*/
+  color: white;
+  padding: 20px;
+}
+
+.btn-name {
+  position: relative;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 50;
+  margin-top: -70px;
+  color: white;
+  padding: 20px;
+}
+.btn {
+  background-color: #FAAD00;
+  height: 60px;
+  width: 200px;
+  border-radius: 35px;
+}
+
+.login-button {
+  position: relative;
+  top: 10%;
+}
 .enterbutton {
   margin: 20px;
 }
 
 .input-field {
-  height: 100px
+  color: white;
+  background-color: rgba(105,100,100,0.8);
+  opacity: 30%;
+  height: 50%;
+}
+#pageDescription {
+  border-radius: 25px;
+  background-color: #FAAD00;
+}
+nav {
+  background-color: #FAAD00;
+  padding-left: 0%;
+  padding-right: 5%;
+}
+.nav-align {
+  padding-top: 0px;
+}
+.modal-text {
+  font-size: 200%;
+}
+label {
+  color: white;
+}
+#newAccount {
+  position: relative;
+  top: -8px;
+}
+#loginScreenButton {
+
 }

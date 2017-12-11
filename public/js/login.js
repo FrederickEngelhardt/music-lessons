@@ -24,7 +24,7 @@ $(document).ready(() => {
         window.location.href = '/home.html'
       })
       .fail(($xhr) => {
-        Materialize.toast('Invalid')
+        Materialize.toast('Invalid', 3000)
       })
   })
 })

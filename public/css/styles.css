@@ -87,3 +87,10 @@ main .container {
   position: relative;
   top: 10%;
 }
+.enterbutton {
+  margin: 20px;
+}
+
+.input-field {
+  height: 100px
+}

@@ -11,7 +11,7 @@ router.get('/token', (req, res) => {
     if (err) {
       return res.status(200).send(false)
     }
-    res.status(200).send(true)
+    res.status(200).send({loggedIn: true, cookie: payload})
   })
 })
 

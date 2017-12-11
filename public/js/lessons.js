@@ -1,10 +1,10 @@
 const ajaxGetLessons = () => {
-  $.get('lessons', (result) => {
+  $.get('/lessons', (result) => {
     console.log(result)
   })
 }
 const ajaxGetLessonId = (id) => {
-  $.get(`lessons/${id}`, (result) => {
+  $.get(`/lessons/${id}`, (result) => {
     console.log(result)
   })
 }

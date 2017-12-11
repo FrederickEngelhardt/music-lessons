@@ -3,7 +3,7 @@
 const express = require('express')
 const knex = require('../knex')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt-as-promised')
+const bcrypt = require('bcrypt')
 const router = express.Router()
 
 router.get('/users', (req, res, next) => {
@@ -36,6 +36,7 @@ router.get('/users/:id', (req, res, next) => {
 })
 
 router.post('/users', (req, res, next) => {
+
   const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body
   const re = /^[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
@@ -48,12 +49,14 @@ router.post('/users', (req, res, next) => {
     .where({email_address})
     .first()
     .then(user => {
-      return bcrypt.hash(password, 10)
-    })
-    .then(hashed_password => {
-      const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
-      return knex.insert(insert, '*')
-        .into('users')
+      if (!user) {
+        const hashed_password = bcrypt.hash(password, 10)
+
+        const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
+
+        return knex.insert(insert, '*')
+          .into('users')
+      }
     })
     .then(data => {
       if (!data) {
@@ -71,6 +74,7 @@ router.post('/users', (req, res, next) => {
         secure: router.get('env') === 'production'
       })
 
+      delete user.hashed_password
       res.status(201).json(user)
     })
     .catch(err => {

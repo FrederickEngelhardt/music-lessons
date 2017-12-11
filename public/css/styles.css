@@ -12,4 +12,19 @@ body {
   background-image: url(../images/background.png);
   background-repeat: no-repeat;
   background-size: cover;
+.title {
+  padding: 50px;
+}
+
+.homebutton {
+  width: 50%;
+  margin: 20px;
+}
+
+.enterbutton {
+  margin: 20px;
+}
+
+.input-field {
+  height: 100px
 }

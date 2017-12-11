@@ -23,6 +23,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-repeat:;
 }
 
 .title {
@@ -49,8 +50,10 @@ main {
   overflow: auto;
 }
 
+
 h1.index {
-  position: relative;
+  display: flex;
+  justify-content: center;
   top: -8px;
   padding-top: 56px;
   font-size: 80px;
@@ -133,4 +136,41 @@ label {
 }
 #loginScreenButton {
 
+}
+
+/*****schedule*****/
+
+
+h1.title {
+  display:flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center;
+  /*top: -8px;*/
+  padding-top: 10px;
+  font-size: 80px;
+  height:10px;
+}
+#scheduleLogo{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+}
+#schedule{
+  position: relative;
+  top: 20px;
+  background-color: white;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#week{
+  display: flex;
+  flex-wrap: wrap;
+}
+#previous_week{
+  background-color: white;
+}
+#next_week{
+  background-color: white;
 }

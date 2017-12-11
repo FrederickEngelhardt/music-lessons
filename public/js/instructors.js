@@ -18,14 +18,14 @@ $.ajax({
                <div class="col s12 m7">
                  <div class="instructor-card card">
                    <div class="card-image">
-                     <img src="images/nigel.jpg">
-                     <span class="card-title black">${data[i].first_name}</span>
+                     <img src="/images/guitarPlayer2.png">
+                     <span class="card-title black">${data[i].first_name} ${data[i].last_name}</span>
                    </div>
                    <div class="card-content">
                      <p>${data[i].bio}.</p>
                    </div>
                    <div class="card-action">
-                     <a href="lessons.html">Book a lesson</a>
+                     <a href="lessons.html">View lesson availability</a>
                    </div>
                  </div>
                </div>

@@ -24,9 +24,13 @@
 })()
 
 const instructorFields = () => {
-  $('add_lessons').append(`<div class='row center'>
-        <button class="homebutton btn waves-effect waves-light" type="submit" name="action">Add Lessons</button>
-      </div>`)
+  $('.add_lessons').append(`
+        <div class='row home-menu center'>
+          <div class="center col s12 m6 l6">
+            <a id="browse_instructors" class="home-button btn waves-effect waves-light" type="submit" name="action" href="instructors.html">
+            <text>Add Lesson</text></a>
+          </div>
+        </div>`)
 }
 
 const checkPrivileges = () => {
@@ -40,13 +44,12 @@ const checkPrivileges = () => {
   })
   if (skill_level === 4){
     return instructorFields()
-  }
-  else {
+  } else {
     return studentFields()
   }
 }
 $(document).ready(() => {
   checkPrivileges()
   $('.modal').modal();
-   $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav();
 })

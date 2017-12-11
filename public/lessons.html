@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<head>
+  <meta charset="utf-8">
+  <title>JAZZED</title>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="./js/lessons.js"></script>
-    <link rel="stylesheet" href="./css/styles.css">
-    </head>
-  <body>
-    
-  </body>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="./js/login.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="left brand-logo"><i class="material-icons"><img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>Schedule</a>
+      <ul class="right">
+        <li><a href="index.html"><i class="material-icons">home</i></a></li>
+        <li><a href="schedule.html"><i class="material-icons">refresh</i></a></li>
+        <!-- Trigger modal1 -->
+        <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">help</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row center">
+    <h1 class="title header center white-text">JAZZED</h1>
+  </div>
+  <div class='row center'>
+    <button class="homebutton btn waves-effect waves-light" id='scheduleLogo' type="submit" name="action">View Lessons</button>
+  </div>
+</body>
+
 </html>

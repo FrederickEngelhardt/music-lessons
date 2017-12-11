@@ -36,7 +36,7 @@ const createAccount = (data='') => {
           window.location.href = '/home.html'
         })
         .fail(($xhr) => {
-          Materialize.toast('Invalid', 3000)
+          Materialize.toast('Invalid Email or Password', 3000)
         })
 }
 $(document).ready( () => {

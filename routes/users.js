@@ -51,13 +51,18 @@ router.post('/users', (req, res, next) => {
     .first()
     .then(user => {
       if (!user) {
-        const hashed_password = bcrypt.hash(password, 10)
-
-        const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
-
-        return knex.insert(insert, '*')
-          .into('users')
+        return bcrypt.hash(password, 10)
       }
+    })
+    .then(hashed_password => {
+      if (!hashed_password) {
+        return next({ status: 400, message: `User account already exists` })
+
+      }
+      const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
+
+      return knex.insert(insert, '*')
+        .into('users')
     })
     .then(data => {
       if (!data) {

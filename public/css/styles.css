@@ -19,9 +19,12 @@ body {
   padding: 50px;
 }
 #slogan {
+  position: relative;
+  top: -20px;
   font-family: Dekko;
   font-size: 25px;
   font-weight: bold;
+  -webkit-text-stroke: 1px white;
 }
 
 .homebutton {

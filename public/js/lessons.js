@@ -66,6 +66,14 @@ const lessonDelete = (...id) => {
   })
 }
 
+// $(document).ready(() => {
+//   $('#LESSONPOSTBUTTON').on('click', (event) => {
+//     $.get('/token', data => {
+//       console.log(data);
+//     })
+//   })
+// })
+
 /* TESTs */
 const sendInfo = {
   user_client_id: "1",

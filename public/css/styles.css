@@ -45,9 +45,14 @@ main {
   overflow: auto;
 }
 
-h1 {
+h1.index {
   font-family: Dekko;
-  padding-top: 40px;
+  padding-top: 56px;
+  font-size: 80px;
+}
+h1.navigation {
+  font-family: Dekko;
+  /*padding-top: 40px;*/
   font-size: 80px;
 }
 
@@ -92,5 +97,21 @@ main .container {
 }
 
 .input-field {
-  height: 100px
+  color: white;
+  background-color: rgba(105,100,100,0.8);
+  opacity: 30%;
+  height: 50%;
+}
+#pageDescription {
+  border-radius: 25px;
+  background-color: #FAAD00;
+}
+nav {
+  background-color: #FAAD00;
+}
+.nav-align {
+  padding-top: 0px;
+}
+.modal-text {
+  font-size: 200%;
 }

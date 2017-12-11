@@ -108,6 +108,8 @@ main .container {
 }
 nav {
   background-color: #FAAD00;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 .nav-align {
   padding-top: 0px;

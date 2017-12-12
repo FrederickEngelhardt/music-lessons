@@ -4,7 +4,8 @@ $(document).ready(() => {
       const id = data.user_instructor_id
       $.get(`/users/${id}`)
         .done(user => {
-          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td><button class="addLesson">+</button></td></tr>' );
+          console.log(user);
+          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>' );
         })
     })
     $('.modal').modal();

@@ -100,9 +100,6 @@ main .container {
   position: relative;
   top: 10%;
 }
-.enterbutton {
-  margin: 20px;
-}
 
 .input-field {
   color: white;
@@ -135,7 +132,11 @@ label {
   top: -8px;
 }
 #loginScreenButton {
-
+  line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
 }
 #browse_instructors {
   line-height: 28px;

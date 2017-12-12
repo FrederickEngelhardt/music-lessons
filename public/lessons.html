@@ -22,22 +22,36 @@
 
 <body>
   <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="left brand-logo"><i class="material-icons"><img class="logo" src="./images/guitarPlayer2.png" alt="guitar player icon" height="50px" width="50px"></i>Schedule</a>
-      <ul class="right">
-        <li><a href="index.html"><i class="material-icons">home</i></a></li>
-        <li><a href="schedule.html"><i class="material-icons">refresh</i></a></li>
-        <!-- Trigger modal1 -->
-        <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">help</i></a></li>
-      </ul>
-    </div>
+    <a href="#" data-activates="mobile-demo" class="waves-effect waves-orange right button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right">
+      <li><a href="home.html"><i class="material-icons">home</i></a></li>
+      <!-- Trigger modal3 -->
+      <li><a class="waves-effect waves-orange modal-trigger" href="#modal13"><i class="material-icons">help</i></a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a id="logout" href="index.html">Logout</a></li>
+    </ul>
+
+  </div>
   </nav>
+
   <div class="row center">
     <h1 class="title header center white-text">JAZZED</h1>
   </div>
   <div class='row center'>
     <button class="homebutton btn waves-effect waves-light" id='scheduleLogo' type="submit" name="action">View Lessons</button>
   </div>
+
+  <div id="modal13" class="modal">
+    <div class="modal-content">
+      <h4>Welcome to the Home page</h4>
+      <p class="modal-text">Feel free to checkout the lesson schedule. Add your payment method to schedule lessons directly.</p>
+    </div>
+
+  </div>
+
 </body>
 
 </html>

@@ -37,7 +37,7 @@ router.get('/users/:id', (req, res, next) => {
 
 router.post('/users', (req, res, next) => {
 
-  const { first_name, last_name, phone_number, skill_level_id, bio, email_address, avatar_url, password } = req.body
+  const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body
   const re = /^[A-Za-z\d$@$!%*#?&]{8,}$/
   if (!re.test(password)) {
     return next({ status: 400, message: `Password must contain at least one upper-case letter, one number, and one special character` })
@@ -58,7 +58,7 @@ router.post('/users', (req, res, next) => {
         return next({ status: 400, message: `User account already exists` })
 
       }
-      const insert = { first_name, last_name, phone_number, email_address, avatar_url, hashed_password, skill_level_id, bio}
+      const insert = { first_name, last_name, phone_number, email_address, hashed_password, skill_level_id, bio}
 
       return knex.insert(insert, '*')
         .into('users')
@@ -99,8 +99,8 @@ router.patch('/users/:id', (req, res, next) => {
       if (!user) {
         return next({ status: 404, message: `User not found` })
       }
-      const { phone_number, email_address, avatar_url, bio } = req.body
-      const insert = { phone_number, email_address, avatar_url, bio }
+      const { phone_number, email_address, bio } = req.body
+      const insert = { phone_number, email_address, bio }
 
       return knex('users')
         .update(insert, '*')
@@ -109,7 +109,7 @@ router.patch('/users/:id', (req, res, next) => {
     .then(data => {
       res.status(201).json(data)
     })
-    .catch((err) => {
+    .catch(err => {
       next(err)
     })
 })

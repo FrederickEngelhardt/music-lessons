@@ -6,7 +6,6 @@ exports.up = function(knex, Promise) {
     table.string('last_name').notNullable().defaultTo('')
     table.string('phone_number').notNullable().defaultTo('')
     table.string('email_address').notNullable().unique()
-    table.string('avatar_url').notNullable().defaultTo('')
     table.specificType('hashed_password', 'char(60)').notNullable()
     table.integer('skill_level_id').notNullable()
     table.foreign('skill_level_id').references('skill_levels.id')

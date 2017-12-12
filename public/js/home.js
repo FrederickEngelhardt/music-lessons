@@ -40,16 +40,21 @@ const checkPrivileges = () => {
     $.get(`/users/${id}`)
       .done(data => {
         skill_level = data.skill_level_id
+        if (skill_level == 4){return instructorFields()}
+        console.log(skill_level);
       })
   })
-  if (skill_level === 4){
-    return instructorFields()
-  } else {
-    return studentFields()
-  }
 }
 $(document).ready(() => {
   checkPrivileges()
   $('.modal').modal();
-  $(".button-collapse").sideNav();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true,
+      // onOpen: function(el) {}
+      // onClose: function(el) {}
+    }
+  );
 })

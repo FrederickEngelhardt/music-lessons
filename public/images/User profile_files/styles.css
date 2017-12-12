@@ -100,6 +100,9 @@ main .container {
   position: relative;
   top: 10%;
 }
+.enterbutton {
+  margin: 20px;
+}
 
 .input-field {
   color: white;
@@ -132,42 +135,18 @@ label {
   top: -8px;
 }
 #loginScreenButton {
-  line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
+
 }
 #browse_instructors {
   line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
-}
-#browse_lessons {
-  padding: 11px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
 }
 #account_preferences {
   line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
 }
-#home_mySchedule_btn{
-  padding: 15px;
-  line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
+text.button-text {
+  position: relative;
+  top: 10px;
 }
-
 .row.home-menu{
   position: relative;
   top: 10px;
@@ -185,26 +164,7 @@ label {
 }
 .card{
   margin: 20px;
-}
 
-#bio {
-  font-size: 16px;
-  display: flex;
-  justify-content: left;
-}
-
-#lessonAvail {
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-}
-
-#instructorLogo{
-  line-height: 120%;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #faad00;
 }
 /*****end instructors*****/
 
@@ -224,7 +184,6 @@ h1.title {
   height: 60px;
   font-size: 20px;
   font-weight: 300;
-  background-color: #ffa726;
 }
 #schedule{
   position: relative;
@@ -273,36 +232,3 @@ h1.title {
 }
 
 /*****end schedule*****/
-
-
-/*****lessons*****/
-#home_lessons_btn{
-  margin-bottom: 80px;
-  font-size: 17px;
-  background-color: #FAAD00;
-}
-
-#lessonsTable{
-  padding-top: -180px;
-  font-size: 14px;
-  color: #fff
-}
-
-.addLesson {
-  font-size: 22px;
-}
-/*****end lessons*****/
-
-
-/*****my lessons*****/
-#home_my_lessons_btn{
-  margin-bottom: 80px;
-  font-size: 17px;
-  background-color: #FAAD00;
-}
-
-#myLessonsTable{
-  padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
-}

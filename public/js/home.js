@@ -45,7 +45,7 @@ const checkPrivileges = () => {
   if (skill_level === 4){
     return instructorFields()
   } else {
-    return studentFields()
+    return
   }
 }
 $(document).ready(() => {

@@ -6,7 +6,7 @@ const assert = require('chai').assert;
 const { suite, test } = require('mocha');
 const knex = require('../knex');
 const { addDatabaseHooks } = require('./utils')
-suite('00 migrations', addDatabaseHooks(() => {
+suite('00_skill_levels migrations', addDatabaseHooks(() => {
   test('skill levels columns', (done) => {
     knex('skill_levels').columnInfo()
       .then((actual) => {
@@ -18,53 +18,11 @@ suite('00 migrations', addDatabaseHooks(() => {
             defaultValue: 'nextval(\'skill_levels_id_seq\'::regclass)'
           },
 
-          title: {
+          skill_level: {
             type: 'character varying',
             maxLength: 255,
             nullable: false,
             defaultValue: '\'\'::character varying'
-          },
-
-          author: {
-            type: 'character varying',
-            maxLength: 255,
-            nullable: false,
-            defaultValue: '\'\'::character varying'
-          },
-
-          genre: {
-            type: 'character varying',
-            maxLength: 255,
-            nullable: false,
-            defaultValue: '\'\'::character varying'
-          },
-
-          description: {
-            type: 'text',
-            maxLength: null,
-            nullable: false,
-            defaultValue: '\'\'::text'
-          },
-
-          cover_url: {
-            type: 'text',
-            maxLength: null,
-            nullable: false,
-            defaultValue: '\'\'::text'
-          },
-
-          created_at: {
-            type: 'timestamp with time zone',
-            maxLength: null,
-            nullable: false,
-            defaultValue: 'now()'
-          },
-
-          updated_at: {
-            type: 'timestamp with time zone',
-            maxLength: null,
-            nullable: false,
-            defaultValue: 'now()'
           }
         };
 

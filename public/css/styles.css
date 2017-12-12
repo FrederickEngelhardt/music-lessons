@@ -190,7 +190,9 @@ label {
 .card{
   margin: 20px;
 }
-
+#instructorsBadge{
+  margin-bottom: -35px;
+}
 #bio {
   font-size: 16px;
   display: flex;
@@ -204,8 +206,7 @@ label {
 }
 
 #instructorLogo{
-  line-height: 120%;
-  height: 60px;
+  top: -50px;
   font-size: 20px;
   font-weight: 300;
   background-color: #faad00;
@@ -215,7 +216,8 @@ label {
 
 
 /*****lessons*****/
-#home_lessons_btn{
+#home_lessons_btn{  
+  padding: 12px;
   margin-bottom: 80px;
   font-size: 17px;
   background-color: #FAAD00;
@@ -235,6 +237,7 @@ label {
 
 /*****my lessons*****/
 #home_my_lessons_btn{
+  padding: 12px;
   margin-bottom: 80px;
   font-size: 17px;
   background-color: #FAAD00;
@@ -242,8 +245,8 @@ label {
 
 #myLessonsTable{
   padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
+  font-size: 14px;
+  color: #fff
 }
 
 /*****end my lessons*****/

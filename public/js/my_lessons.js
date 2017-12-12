@@ -1,31 +1,23 @@
-// $(document).ready(() => {
-//   $.get('/token', result => {
-//     const id = result.cookie.user_id
-//     $.get(`/lessons/${id}`, result => {
-//       console.log(result);
-//     })
-//
-//   })
+$(document).ready(() => {
+  $.get('/token', result => {
+    const id = result.cookie.user_id
+    $.get('/lessons', ([data]) => {
+      const client = data.user_client_id
 
-//   $.get('/lessons')
-//     .done(([data]) => {
-//       const id = data.user_instructor_id
-//       $.get(`/users/${id}`)
-//         .done(user => {
-//           console.log(user);
-//           $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td><button class="addLesson">+</button></td></tr>' );
-//         })
-//     })
-// })
-// const checkPrivileges = () => {
-//   let skill_level
-//   $.get('/token', result => {
-//     const id = result.cookie.user_id
-//     $.get(`/users/${id}`)
-//       .done(data => {
-//         skill_level = data.skill_level_id
-//         if (skill_level == 4){return instructorFields()}
-//         console.log(skill_level);
-//       })
-//   })
-// }
+      if (client === id) {
+        $.get(`/users/${id}`, user => {
+          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td></tr>' )
+        })
+      }
+    })
+  })
+  $('.modal').modal();
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'right', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true,
+      // onOpen: function(el) {}
+      // onClose: function(el) {}
+    })
+})

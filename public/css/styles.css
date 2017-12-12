@@ -137,10 +137,38 @@ label {
 #loginScreenButton {
 
 }
+#browse_instructors {
+  line-height: 28px;
+}
+#account_preferences {
+  line-height: 28px;
+}
+text.button-text {
+  position: relative;
+  top: 10px;
+}
+.row.home-menu{
+  position: relative;
+  top: 10px;
+  line-height: 60px;
+}
+/* End of home menu*/
 
+
+
+/*****instructors*****/
+
+
+.card-title{
+  font: black;
+}
+.card{
+  margin: 20px;
+
+}
+/*****end instructors*****/
 
 /*****schedule*****/
-
 
 h1.title {
   display:flex;
@@ -175,7 +203,7 @@ h1.title {
 #previous_week{
   display: flex;
   justify-content: center;
-  background-color: orange;
+  background-color: #FAAD00;
   height: 25px;
   border-radius: 12px;
   width: 10px;
@@ -199,23 +227,8 @@ h1.title {
   width: 18px;
   font-size: 20px;
   border-radius: 12px;
-  background-color: orange;
+  background-color: #FAAD00;
   height: 40px;
 }
-#browse_instructors {
-  line-height: 28px;
-}
-#account_preferences {
-  line-height: 28px;
-}
-text.button-text {
-  position: relative;
-  top: 10px;
-}
-.row.home-menu{
-  position: relative;
-  top: 10px;
-  line-height: 60px;
-}
 
-/* End of home menu*/
+/*****end schedule*****/

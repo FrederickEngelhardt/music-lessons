@@ -1,6 +1,5 @@
 const getAccount = (id) => {
   $.get(`/users/${id}`).done( (data) => {
-    console.log(data);
     $('#first_name').append(data.first_name)
     $('#last_name').append(data.last_name)
     $('#phone_number').append(data.phone_number)

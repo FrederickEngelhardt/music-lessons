@@ -99,8 +99,8 @@ router.patch('/users/:id', (req, res, next) => {
       if (!user) {
         return next({ status: 404, message: `User not found` })
       }
-      const { phone_number, email_address, bio } = req.body
-      const insert = { phone_number, email_address, bio }
+      const { phone_number, bio } = req.body
+      const insert = { phone_number, bio }
 
       return knex('users')
         .update(insert, '*')

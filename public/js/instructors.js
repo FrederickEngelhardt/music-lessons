@@ -39,7 +39,11 @@ $.ajax({
    },
 })
   $(document).ready(() => {
+<<<<<<< HEAD
     $('.modal').modal();
+=======
+    $('.modal').modal()
+>>>>>>> bf5ff71fda55e16ee293c9df4b213cef7974088c
     $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300
         edge: 'right', // Choose the horizontal origin
@@ -47,6 +51,11 @@ $.ajax({
         draggable: true,
         // onOpen: function(el) {}
         // onClose: function(el) {}
+<<<<<<< HEAD
       })
+=======
+      }
+    );
+>>>>>>> bf5ff71fda55e16ee293c9df4b213cef7974088c
   })
 })

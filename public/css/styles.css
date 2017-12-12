@@ -164,7 +164,26 @@ text.button-text {
 }
 .card{
   margin: 20px;
+}
 
+#bio {
+  font-size: 16px;
+  display: flex;
+  justify-content: left;
+}
+
+#lessonAvail {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+}
+
+#instructorLogo{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #faad00;
 }
 /*****end instructors*****/
 
@@ -184,6 +203,7 @@ h1.title {
   height: 60px;
   font-size: 20px;
   font-weight: 300;
+  background-color: #ffa726;
 }
 #schedule{
   position: relative;

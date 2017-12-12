@@ -22,10 +22,10 @@ $.ajax({
                      <span class="card-title black">${data[i].first_name} ${data[i].last_name}</span>
                    </div>
                    <div class="card-content">
-                     <p>${data[i].bio}.</p>
+                     <p id="bio">${data[i].bio}.</p>
                    </div>
                    <div class="card-action">
-                     <a href="lessons.html">View lesson availability</a>
+                     <a id="lessonAvail" href="lessons.html">Lesson availability</a>
                    </div>
                  </div>
                </div>
@@ -38,4 +38,8 @@ $.ajax({
      }
    },
 })
+  $(document).ready(() => {
+    $('.modal').modal();
+    $(".button-collapse").sideNav();
+  })
 })

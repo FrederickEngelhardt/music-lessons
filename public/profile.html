@@ -1,87 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>User profile</title>
 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-      <link rel="stylesheet" href="./css/styles.css">
+<head>
+  <meta charset="utf-8">
+  <title>User profile</title>
 
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
-        Home
-      </script>
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-      <script src="./js/home.js"></script>
-      <script src="./js/profile.js"></script>
-  </head>
-  <body>
-    <!-- <div class="row center">
-      <h1 class="title header center grey-text">JAZZED</h1>
-    </div>
-    <div class="row">
-      <h3 class="header center grey-text">My Profile</h3>
-    </div>
-    <div class="row">
-      <h5 id="first_name" class="header center grey-text">First Name: </h5>
-    </div>
-    <div class="row">
-      <h5 id="last_name" class="header center grey-text">Last Name: </h5>
-    </div>
-    <div class="row">
-      <h5 id="phone_number" class="header center grey-text">Phone Number: </h5>
-    </div>
-    <div class="row">
-      <h5 id="skill_level_id" class="header center grey-text">Skill Level: </h5>
-    </div>
-    <div class="row">
-      <h5 id="bio" class="header center grey-text">Bio: </h5>
-    </div>
-  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
+    Home
+  </script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="./js/profile.js"></script>
+</head>
 
-
-
-<div id="profile_card" class="row center">
-<div id="myProfile" class="card">
-    <table class="highlight">
-      <thead>
-        <h3>My Profile</h3>
-      </thead>
-      <tbody>
-        <tr>
-          <td>First Name</td>
-          <td id="first_name"></td>
-        </tr>
-        <tr>
-          <td>Last Name</td>
-          <td id="last_name"></td>
-        </tr>
-        <tr>
-          <td>Phone Number</td>
-          <input><td id="phone_number"></td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td id="email_address"></td>
-        </tr>
-        <tr>
-          <td>Skill Level</td>
-          <td id="skill_level_id"></td>
-        </tr>
-        <tr>
-          <td>Bio</td>
-          <td id="bio"></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="row center">
-      <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+<body>
+  <div id="profile_card" class="row center">
+    <div id="myProfile" class="card">
+      <table class="highlight">
+        <thead>
+          <h3>My Profile</h3>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First Name</td>
+            <td id="first_name"></td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td id="last_name"></td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <input>
+            <td id="phone_number"></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td id="email_address"></td>
+          </tr>
+          <tr>
+            <td>Skill Level</td>
+            <td id="skill_level_id"></td>
+          </tr>
+          <tr>
+            <td>Bio</td>
+            <td id="bio"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row center">
+        <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+      </div>
     </div>
   </div>
-</div>
-  </body>
+</body>
+
 </html>

@@ -170,6 +170,13 @@ label {
   top: 10px;
   line-height: 60px;
 }
+#modal4 {
+  width: 100%;
+}
+#bio-text {
+  color: black;
+  font-size: 18
+}
 /* End of home menu*/
 
 

@@ -8,14 +8,14 @@ const knex = require('../knex');
 const { addDatabaseHooks } = require('./utils')
 suite('00 migrations', addDatabaseHooks(() => {
   test('skill levels columns', (done) => {
-    knex('books').columnInfo()
+    knex('skill_levels').columnInfo()
       .then((actual) => {
         const expected = {
           id: {
             type: 'integer',
             maxLength: null,
             nullable: false,
-            defaultValue: 'nextval(\'books_id_seq\'::regclass)'
+            defaultValue: 'nextval(\'skill_levels_id_seq\'::regclass)'
           },
 
           title: {

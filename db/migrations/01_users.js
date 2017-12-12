@@ -9,9 +9,9 @@ exports.up = function(knex, Promise) {
     table.specificType('hashed_password', 'char(60)').notNullable()
     table.integer('skill_level_id').notNullable()
     table.foreign('skill_level_id').references('skill_levels.id')
-    table.text('bio').notNullable().defaultTo('Ready to shred with big boi Fred')
-    table.timestamps(true, true)
-  })
+    table.text('bio').notNullable().defaultTo('New User')
+    table.timestamp('created_at').notNullable().defaultTo(knex.raw('now()'))
+        table.timestamp('updated_at').notNullable().defaultTo(knex.raw('now()'))  })
 }
 exports.down = function(knex, Promise) {
   return knex.schema.dropTable('users')

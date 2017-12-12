@@ -139,9 +139,17 @@ label {
 }
 #browse_instructors {
   line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
 }
 #account_preferences {
   line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
 }
 text.button-text {
   position: relative;
@@ -151,6 +159,13 @@ text.button-text {
   position: relative;
   top: 10px;
   line-height: 60px;
+}
+#home_mySchedule_btn{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
 }
 /* End of home menu*/
 
@@ -164,7 +179,26 @@ text.button-text {
 }
 .card{
   margin: 20px;
+}
 
+#bio {
+  font-size: 16px;
+  display: flex;
+  justify-content: left;
+}
+
+#lessonAvail {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+}
+
+#instructorLogo{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #faad00;
 }
 /*****end instructors*****/
 
@@ -184,6 +218,7 @@ h1.title {
   height: 60px;
   font-size: 20px;
   font-weight: 300;
+  background-color: #ffa726;
 }
 #schedule{
   position: relative;

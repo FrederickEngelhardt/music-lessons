@@ -278,8 +278,12 @@ h1.title {
 
 #lessonsTable{
   padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
+  font-size: 14px;
+  color: #fff
+}
+
+.addLesson {
+  font-size: 22px;
 }
 /*****end lessons*****/
 

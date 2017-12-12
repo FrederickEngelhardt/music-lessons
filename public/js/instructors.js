@@ -39,7 +39,7 @@ $.ajax({
    },
 })
   $(document).ready(() => {
-    $('.modal').modal()
+    $('.modal').modal();
     $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300
         edge: 'right', // Choose the horizontal origin
@@ -47,7 +47,6 @@ $.ajax({
         draggable: true,
         // onOpen: function(el) {}
         // onClose: function(el) {}
-      }
-    );
+      })
   })
 })

@@ -6,7 +6,7 @@ $(document).ready(() => {
 
       if (client === id) {
         $.get(`/users/${id}`, user => {
-          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td><button class="addLesson">+</button></td></tr>' )
+          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td></tr>' )
         })
       }
     })

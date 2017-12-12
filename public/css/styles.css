@@ -277,6 +277,7 @@ h1.title {
 
 /*****lessons*****/
 #home_lessons_btn{
+  padding: 12px;
   margin-bottom: 80px;
   font-size: 17px;
   background-color: #FAAD00;

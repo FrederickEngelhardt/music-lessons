@@ -267,3 +267,31 @@ h1.title {
 }
 
 /*****end schedule*****/
+
+
+/*****lessons*****/
+#home_lessons_btn{
+  margin-bottom: 80px;
+  font-size: 17px;
+  background-color: #FAAD00;
+}
+
+#lessonsTable{
+  padding-top: -180px;
+  background-color: white;
+  font-size: 18px;
+}
+/*****end lessons*****/
+
+
+/*****my lessons*****/
+#home_my_lessons_btn{
+  margin-bottom: 80px;
+  font-size: 17px;
+}
+
+#myLessonsTable{
+  padding-top: -180px;
+  background-color: white;
+  font-size: 18px;
+}

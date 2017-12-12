@@ -1,0 +1,234 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'yukyokasho';
+  font-weight: 100;
+}
+a {
+    font-family: 'yukyokasho';
+}
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #EEEEEE;
+  -webkit-font-smoothing: antialiased;
+  font-size: x-small;
+  color: #666666;
+  background: url("../images/background.png")
+  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat:;
+}
+.title {
+  padding: 50px;
+}
+#slogan {
+  position: relative;
+  top: -20px;
+  font-size: 22px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px white;
+}
+
+.homebutton {
+  width: 50%;
+  margin: 20px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  resize: vertical;
+  overflow: auto;
+}
+
+
+h1.index {
+  display: flex;
+  justify-content: center;
+  top: -8px;
+  padding-top: 56px;
+  font-size: 80px;
+}
+h1.navigation {
+  position: relative;
+  top: -8px;
+  /*padding-top: 40px;*/
+  font-size: 80px;
+}
+.container {
+  position: relative;
+  top: -50px;
+}
+
+main .container {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 100px;
+  margin-top: -70px;
+  /*background: black;*/
+  color: white;
+  padding: 20px;
+}
+
+.btn-name {
+  position: relative;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 50;
+  margin-top: -70px;
+  color: white;
+  padding: 20px;
+}
+.btn {
+  background-color: #FAAD00;
+  height: 60px;
+  width: 200px;
+  border-radius: 35px;
+}
+
+.login-button {
+  position: relative;
+  top: 10%;
+}
+.enterbutton {
+  margin: 20px;
+}
+
+.input-field {
+  color: white;
+  background-color: rgba(105,100,100,0.8);
+  opacity: 30%;
+  height: 50%;
+}
+#pageDescription {
+  border-radius: 25px;
+  background-color: #FAAD00;
+}
+
+/* Beginning of home.html*/
+nav {
+  background-color: #FAAD00;
+  padding-left: 0%;
+  padding-right: 5%;
+}
+.nav-align {
+  padding-top: 0px;
+}
+.modal-text {
+  font-size: 200%;
+}
+label {
+  color: white;
+}
+#newAccount {
+  position: relative;
+  top: -8px;
+}
+#loginScreenButton {
+
+}
+#browse_instructors {
+  line-height: 28px;
+}
+#account_preferences {
+  line-height: 28px;
+}
+text.button-text {
+  position: relative;
+  top: 10px;
+}
+.row.home-menu{
+  position: relative;
+  top: 10px;
+  line-height: 60px;
+}
+/* End of home menu*/
+
+
+
+/*****instructors*****/
+
+
+.card-title{
+  font: black;
+}
+.card{
+  margin: 20px;
+
+}
+/*****end instructors*****/
+
+/*****schedule*****/
+
+h1.title {
+  display:flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center;
+  /*top: -8px;*/
+  padding-top: 10px;
+  font-size: 80px;
+  height:10px;
+}
+#scheduleLogo{
+  line-height: 120%;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+}
+#schedule{
+  position: relative;
+  top: 20px;
+  background-color: white;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+#week{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+
+}
+#previous_week{
+  display: flex;
+  justify-content: center;
+  background-color: #FAAD00;
+  height: 25px;
+  border-radius: 12px;
+  width: 10px;
+  height: 40px;
+  font-size: 100px;
+}
+#current_week{
+  line-height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  font-size: 18px;
+  height: 45px;
+}
+#next_week{
+  display: flex;
+  justify-content: center;
+  width: 18px;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #FAAD00;
+  height: 40px;
+}
+
+/*****end schedule*****/

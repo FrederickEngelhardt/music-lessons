@@ -100,6 +100,9 @@ main .container {
   position: relative;
   top: 10%;
 }
+.enterbutton {
+  margin: 20px;
+}
 
 .input-field {
   color: white;
@@ -127,44 +130,23 @@ nav {
 label {
   color: white;
 }
-
+#newAccount {
+  position: relative;
+  top: -8px;
+}
 #loginScreenButton {
-  line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
+
 }
 #browse_instructors {
   line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
-}
-#browse_lessons {
-  padding: 11px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
 }
 #account_preferences {
   line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
 }
-#home_mySchedule_btn{
-  padding: 15px;
-  line-height: 28px;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #FAAD00;
+text.button-text {
+  position: relative;
+  top: 10px;
 }
-
 .row.home-menu{
   position: relative;
   top: 10px;
@@ -182,69 +164,71 @@ label {
 }
 .card{
   margin: 20px;
-}
 
-#bio {
-  font-size: 16px;
-  display: flex;
-  justify-content: left;
 }
+/*****end instructors*****/
 
-#lessonAvail {
-  font-size: 13px;
-  display: flex;
+/*****schedule*****/
+
+h1.title {
+  display:flex;
+  /*flex-wrap: wrap;*/
   justify-content: center;
+  /*top: -8px;*/
+  padding-top: 10px;
+  font-size: 80px;
+  height:10px;
 }
-
-#instructorLogo{
+#scheduleLogo{
   line-height: 120%;
   height: 60px;
   font-size: 20px;
   font-weight: 300;
-  background-color: #faad00;
 }
-/*****end instructors*****/
-
-
-
-/*****lessons*****/
-#home_lessons_btn{
-  margin-bottom: 80px;
-  font-size: 17px;
-  background-color: #FAAD00;
-}
-
-#lessonsTable{
-  padding-top: -180px;
-  font-size: 14px;
-  color: #fff
-}
-
-.addLesson {
-  font-size: 22px;
-}
-/*****end lessons*****/
-
-
-/*****my lessons*****/
-#home_my_lessons_btn{
-  margin-bottom: 80px;
-  font-size: 17px;
-  background-color: #FAAD00;
-}
-
-#myLessonsTable{
-  padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
-}
-
-/*****end my lessons*****/
-
-/*****sign up*****/
-#newAccount {
+#schedule{
   position: relative;
-  top: -8px;
-  background-color: #FAAD00;
+  top: 20px;
+  background-color: white;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
 }
-/***** end sign up*****/
+#week{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 40px;
+
+}
+#previous_week{
+  display: flex;
+  justify-content: center;
+  background-color: #FAAD00;
+  height: 25px;
+  border-radius: 12px;
+  width: 10px;
+  height: 40px;
+  font-size: 100px;
+}
+#current_week{
+  line-height: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  width: 150px;
+  font-size: 18px;
+  height: 45px;
+}
+#next_week{
+  display: flex;
+  justify-content: center;
+  width: 18px;
+  font-size: 20px;
+  border-radius: 12px;
+  background-color: #FAAD00;
+  height: 40px;
+}
+
+/*****end schedule*****/

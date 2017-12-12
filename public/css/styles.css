@@ -130,10 +130,7 @@ nav {
 label {
   color: white;
 }
-#newAccount {
-  position: relative;
-  top: -8px;
-}
+
 #loginScreenButton {
 
 }
@@ -202,71 +199,6 @@ text.button-text {
 }
 /*****end instructors*****/
 
-/*****schedule*****/
-
-h1.title {
-  display:flex;
-  /*flex-wrap: wrap;*/
-  justify-content: center;
-  /*top: -8px;*/
-  padding-top: 10px;
-  font-size: 80px;
-  height:10px;
-}
-#scheduleLogo{
-  line-height: 120%;
-  height: 60px;
-  font-size: 20px;
-  font-weight: 300;
-  background-color: #ffa726;
-}
-#schedule{
-  position: relative;
-  top: 20px;
-  background-color: white;
-  width: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-#week{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding-bottom: 40px;
-
-}
-#previous_week{
-  display: flex;
-  justify-content: center;
-  background-color: #FAAD00;
-  height: 25px;
-  border-radius: 12px;
-  width: 10px;
-  height: 40px;
-  font-size: 100px;
-}
-#current_week{
-  line-height: 20px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  width: 150px;
-  font-size: 18px;
-  height: 45px;
-}
-#next_week{
-  display: flex;
-  justify-content: center;
-  width: 18px;
-  font-size: 20px;
-  border-radius: 12px;
-  background-color: #FAAD00;
-  height: 40px;
-}
-
-/*****end schedule*****/
 
 
 /*****lessons*****/
@@ -278,7 +210,7 @@ h1.title {
 
 #lessonsTable{
   padding-top: -180px;
-  background-color: white;
+  background: white;
   font-size: 18px;
 }
 /*****end lessons*****/
@@ -296,3 +228,13 @@ h1.title {
   background-color: white;
   font-size: 18px;
 }
+
+/*****end my lessons*****/
+
+/*****sign up*****/
+#newAccount {
+  position: relative;
+  top: -8px;
+  background-color: #FAAD00;
+}
+/***** end sign up*****/

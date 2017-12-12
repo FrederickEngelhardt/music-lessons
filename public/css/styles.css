@@ -229,6 +229,7 @@ label {
 
 /*****my lessons*****/
 #home_my_lessons_btn{
+  padding: 12px;
   margin-bottom: 80px;
   font-size: 17px;
   background-color: #FAAD00;
@@ -236,8 +237,8 @@ label {
 
 #myLessonsTable{
   padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
+  font-size: 14px;
+  color: #fff
 }
 
 /*****end my lessons*****/

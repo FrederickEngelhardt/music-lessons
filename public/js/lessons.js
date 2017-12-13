@@ -1,13 +1,17 @@
-$(document).ready(() => {
-  $.get('/lessons')
-    .done(([data]) => {
-      console.log(data);
-      const id = data.user_instructor_id
-      $.get(`/users/${id}`)
-        .done(user => {
-          $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>' );
-        })
+const getAllLessons = () => {
+  $.get('lessons').done( result => {
+    result.forEach( (element) => {
+      console.log(element);
+      const id = element.user_instructor_id
+      $.get(`/users/${id}`).done( user_data => {
+        console.log(user_data);
+              $('tbody').append(`<tr><td>${user_data.first_name}</td><td>${element.date_time}</td><td>${element.location}</td><td>${element.cost}</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>` )
+      })
     })
+  })
+}
+$(document).ready(() => {
+  getAllLessons()
     $('.modal').modal();
     $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300

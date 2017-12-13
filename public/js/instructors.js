@@ -15,7 +15,8 @@ $.ajax({
            $('.instructor-body').append(
              `
              <div class="row">
-               <div class="col s12 m7">
+             <div class="col m3 l3"></div>
+               <div class="col s12 m6 l6">
                  <div class="instructor-card card">
                    <div class="card-image">
                      <img src="/images/guitarPlayer2.png">

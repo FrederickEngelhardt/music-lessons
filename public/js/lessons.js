@@ -7,6 +7,14 @@ $(document).ready(() => {
           $('tbody').append('<tr><td>' + user.first_name + '</td><td>' + data.date_time + '</td><td>' + data.location + '</td><td>' + data.cost + '</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>' );
         })
     })
+    $('.addLesson').on('click', (event) => {
+      console.log('ok');
+      event.preventDefault()
+      $.get('/token', data => {
+        const id = data.cookie.user_id
+        console.log(id);
+      })
+    })
     $('.modal').modal();
     $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 300
@@ -16,13 +24,6 @@ $(document).ready(() => {
         // onOpen: function(el) {}
         // onClose: function(el) {}
       })
-  $('.addLesson').on('click', (event) => {
-    event.preventDefault()
-    $.get('/token', data => {
-      const id = data.cookie.user_id
-      $.patch('/lessons')
-    })
-  })
 })
 
 const ajaxGetLessons = () => {

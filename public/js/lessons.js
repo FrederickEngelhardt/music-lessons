@@ -1,12 +1,40 @@
+const lessonCard = (element, user_data) => {
+  let html = `
+  <div class="row center">
+    <button id="addLessonButton" class="btn waves-effect waves-light orange" type="submit" name="action">Add Lesson</button>
+    </div>`
+  console.log(element);
+  $(`#open_lesson_${element.id}`).click((event) => {
+    console.log('working');
+    event.preventDefault()
+    if ($('#addLessonButton').html()){
+      // Remove the listener if the button exists
+      $('#addLessonButton').unbind()
+      $('#addLessonButton').delete()
+    }
+    // add a button and a listener to the modal menu
+    $('.add_button').append(html)
+    $('#addLessonButton').click( (event) =>{
+
+    })
+
+    $(`#lesson_card_name`).append(element.lesson_name)
+    $(`#lesson_card_instructor_name`).append(user_data.first_name)
+    $(`#lesson_card_date`).append(element.date)
+    $(`#lesson_card_time`).append(element.time)
+    $(`#lesson_card_location`).append(element.location)
+    $(`#lesson_card_price`).append(element.cost)
+  })
+}
 const getAllLessons = () => {
   $.get('/lessons').done(result => {
     result.forEach((element) => {
       const id = element.user_instructor_id
       const student = element.user_client_id
-      if (student === null){
-      $.get(`/users/${id}`).done( user_data => {
-        console.log(user_data);
-              $('.build_tables').append(`
+      if (student === null) {
+        $.get(`/users/${id}`).done(user_data => {
+          // console.log(user_data);
+          $('.build_tables').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
                   <td>${element.time}</td>
@@ -15,38 +43,38 @@ const getAllLessons = () => {
                   <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
                   </i></a></td>
                 </tr>
-                ` )
-
-        $(`#open_lesson_${element.id}`).click( (event) => {
-          $.get('/token').done( (user_result) => {
-            const user_identity = user_result.cookie.user_id
-            let data = {
-              user_client_id: user_identity
-            }
-            $.ajax({
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              type: "PATCH",
-              url: `/lessons/${element.id}`,
-              dataType: "json",
-              success: function(msg) {
-                if (msg) {
-                  console.log(`Successfully added this lesson to your schedule.`);
-                } else {
-                  alert("Cannot add to list.")
-                }
-              },
-              data: JSON.stringify(data)
-            })
-          }).done( () => {
-            $(`#tr_${element.id}`).remove()
-          })
-
+                `)
+          lessonCard(element, user_data)
+          // $(`#open_lesson_${element.id}`).click( (event) => {
+          //   $.get('/token').done( (user_result) => {
+          //     const user_identity = user_result.cookie.user_id
+          //     let data = {
+          //       user_client_id: user_identity
+          //     }
+          //     $.ajax({
+          //       headers: {
+          //         'Accept': 'application/json',
+          //         'Content-Type': 'application/json'
+          //       },
+          //       type: "PATCH",
+          //       url: `/lessons/${element.id}`,
+          //       dataType: "json",
+          //       success: function(msg) {
+          //         if (msg) {
+          //           console.log(`Successfully added this lesson to your schedule.`);
+          //         } else {
+          //           alert("Cannot add to list.")
+          //         }
+          //       },
+          //       data: JSON.stringify(data)
+          //     })
+          //   }).done( () => {
+          //     $(`#tr_${element.id}`).remove()
+          //   })
+          //
+          // })
         })
-      })
-    }
+      }
     })
   })
 }

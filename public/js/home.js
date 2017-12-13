@@ -58,8 +58,6 @@ const checkPrivileges = () => {
       })
   })
 }
-
-
 /* These are all profile card functions*/
 const createAccountOverview = (data) => {
   const newCard = `
@@ -212,6 +210,18 @@ const createListeners = () => {
   })
 }
 /* End of profile functions */
+
+/* Beginning of instructor lesson creation fields*/
+const createLesson = () => {
+}
+
+
+
+
+
+
+
+
 
 $(document).ready(() => {
   checkPrivileges()

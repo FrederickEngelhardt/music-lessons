@@ -35,6 +35,15 @@ router.get('/users/:id', (req, res, next) => {
     })
 })
 
+// router.get('/users/:id/lessons', (req, res, next) => {
+//   const id = parseInt(req.params.id)
+//   if (Number.isNaN(id)) {
+//     return next({ status: 404, message: `Not Found` })
+//   }
+//   return knex('users')
+//     .join('lessons', 'users.id', 'lesson')
+// })
+
 router.post('/users', (req, res, next) => {
 
   const { first_name, last_name, phone_number, skill_level_id, bio, email_address, password } = req.body

@@ -1,5 +1,6 @@
 const getAllLessons = () => {
-  $.get('lessons').done(result => {
+  $.get('/lessons').done(result => {
+    console.log(result);
     result.forEach((element) => {
       console.log(element);
       const id = element.user_instructor_id
@@ -8,15 +9,21 @@ const getAllLessons = () => {
       if (student === null){
       $.get(`/users/${id}`).done( user_data => {
         console.log(user_data);
-              $('tbody').append(`<tr><td>${user_data.first_name}</td><td>${element.date_time}</td><td>${element.location}</td><td>${element.cost}</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>` )
-        $('.addLesson').on('click', (event) => {
-          $.get('/token', result => {
-            const id = result.cookie.user_id
+              $('tbody').append(`
+                <tr>
+                  <td>${user_data.first_name}</td>
+                  <td>${element.date_time}</td>
+                  <td>${element.location}</td>
+                  <td>${element.cost}</td>
+                  <td> <a id="${element.id}" class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td>
+                </tr>
+                ` )
+        $(`#${element.id}`).click( (event) => {
+          $.get('/token').done( (user_result) => {
+            const user_identity = user_result.cookie.user_id
             let data = {
-              user_client_id: id
+              user_client_id: user_identity
             }
-            console.log(data);
-
             $.ajax({
               headers: {
                 'Accept': 'application/json',
@@ -27,7 +34,7 @@ const getAllLessons = () => {
               dataType: "json",
               success: function(msg) {
                 if (msg) {
-                  console.log(`Lesson information was successfully update!`);
+                  console.log(`Successfully added this lesson to your schedule.`);
                 } else {
                   alert("Cannot add to list.")
                 }

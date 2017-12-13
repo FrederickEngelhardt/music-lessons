@@ -34,7 +34,7 @@ exports.seed = function(knex, Promise) {
       location: 'In my dank basement',
       cost: '$20',
       date_time: '12/16/17 8:00PM',
-      lesson_name: 'Karokee w/ the Boyz'
+      lesson_name: 'Karokee w/ the Boyz.'
     }
   ]).then(() => {
     return knex.raw(

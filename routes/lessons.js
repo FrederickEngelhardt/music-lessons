@@ -49,7 +49,7 @@ router.get('/lessons/:id', authorize, (req, res, next) => {
 router.post('/lessons', authorize, (req, res, next) => {
   const { user_client_id, user_instructor_id, location, cost, date, time, lesson_name } = req.body
   console.log(req.body);
-  const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
+  const newLesson = { user_client_id, user_instructor_id, location, cost, date, time, lesson_name }
   if (!user_instructor_id) {
     return next({ status: 400, message: `Instructor ID must not be blank` })
   }
@@ -59,7 +59,10 @@ router.post('/lessons', authorize, (req, res, next) => {
   if (!cost) {
     return next({ status: 400, message: `Cost must not be blank` })
   }
-  if (!date_time) {
+  if (!date) {
+    return next({ status: 400, message: `Date and time must not be blank` })
+  }
+  if (!time) {
     return next({ status: 400, message: `Date and time must not be blank` })
   }
   if (!lesson_name) {
@@ -80,7 +83,7 @@ router.patch('/lessons/:id', authorize, (req, res, next) => {
   const id = parseInt(req.params.id)
   const { user_client_id, user_instructor_id, location, cost, date, time, lesson_name } = req.body
   console.log(req.body);
-  const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
+  const newLesson = { user_client_id, user_instructor_id, location, cost, date, time, lesson_name }
   if (Number.isNaN(id)) {
     console.log('error');
     return next({ status: 404, message: `Not Found` })

@@ -260,6 +260,9 @@ label {
 .addLesson {
   font-size: 22px;
 }
+tr {
+  height: 100px;
+}
 /*****end lessons*****/
 
 

@@ -23,15 +23,15 @@
 
 })()
 
-const studentFields = () => {
-  $('.add_lessons').append(`
-        <div class='row home-menu center'>
-          <div class="center col s12 m12 l12">
-            <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
-            <text>View Lessons</text></a>
-          </div>
-        </div>`)
-}
+// const studentFields = () => {
+//   $('.add_lessons').append(`
+//         <div class='row home-menu center'>
+//           <div class="center col s12 m12 l12">
+//             <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
+//             <text>View Lessons</text></a>
+//           </div>
+//         </div>`)
+// }
 const instructorFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
@@ -51,7 +51,6 @@ const checkPrivileges = () => {
         skill_level = data.skill_level_id
         if (skill_level == 4) {
           instructorFields()
-          studentFields()
           createLessonModal()
           return
         } else {

@@ -245,7 +245,7 @@ const createLesson = (data) => {
         dataType: "json",
         success: function(msg) {
           if (msg) {
-            console.log("Lesson" + sendInfo.lesson_name + " was added in list !");
+            console.log(`Lesson ${data.lesson_name} was added in list !`);
           } else {
             alert("Cannot add to list !");
           }

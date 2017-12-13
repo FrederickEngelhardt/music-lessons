@@ -1,57 +1,111 @@
 const getAllLessons = () => {
   $.get('/lessons').done(result => {
-    console.log(result);
     result.forEach((element) => {
-      console.log(element);
       const id = element.user_instructor_id
       const student = element.user_client_id
-      console.log(student);
       if (student === null){
       $.get(`/users/${id}`).done( user_data => {
         console.log(user_data);
-              $('tbody').append(`
+              $('.build_tables').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
                   <td>${element.date_time}</td>
                   <td>${element.location}</td>
                   <td>${element.cost}</td>
-                  <td> <a id="${element.id}" class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td>
+                  <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
+                  </i></a></td>
                 </tr>
                 ` )
-        $(`#${element.id}`).click( (event) => {
-          $.get('/token').done( (user_result) => {
-            const user_identity = user_result.cookie.user_id
-            let data = {
-              user_client_id: user_identity
-            }
-            $.ajax({
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-              type: "PATCH",
-              url: `/lessons/${element.id}`,
-              dataType: "json",
-              success: function(msg) {
-                if (msg) {
-                  console.log(`Successfully added this lesson to your schedule.`);
-                } else {
-                  alert("Cannot add to list.")
-                }
-              },
-              data: JSON.stringify(data)
-            })
-          }).done( () => {
-            $(`#tr_${element.id}`).remove()
-          })
 
-        })
+        // $(`#open_lesson_${element.id}`).click( (event) => {
+        //   $.get('/token').done( (user_result) => {
+        //     const user_identity = user_result.cookie.user_id
+        //     let data = {
+        //       user_client_id: user_identity
+        //     }
+        //     $.ajax({
+        //       headers: {
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/json'
+        //       },
+        //       type: "PATCH",
+        //       url: `/lessons/${element.id}`,
+        //       dataType: "json",
+        //       success: function(msg) {
+        //         if (msg) {
+        //           console.log(`Successfully added this lesson to your schedule.`);
+        //         } else {
+        //           alert("Cannot add to list.")
+        //         }
+        //       },
+        //       data: JSON.stringify(data)
+        //     })
+        //   }).done( () => {
+        //     $(`#tr_${element.id}`).remove()
+        //   })
+        //
+        // })
       })
     }
     })
   })
 }
 
+const createAccountOverview = (data) => {
+  const newCard = `
+  <div id="myProfile">
+        <table class="highlight">
+          <thead>
+            <h3>My Profile</h3>
+          </thead>
+          <tbody>
+            <tr>
+              <td>First Name</td>
+              <td id="first_name"></td>
+            </tr>
+            <tr>
+              <td>Last Name</td>
+              <td id="last_name"></td>
+            </tr>
+            <tr>
+              <td>Phone Number</td>
+              <input><td id="phone_number"></td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td id="email_address"></td>
+            </tr>
+            <tr>
+              <td>Skill Level</td>
+              <td id="skill_level_id"></td>
+            </tr>
+            <tr>
+              <td>Bio</td>
+              <td id="bio"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="row center">
+          <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+        </div>
+      </div>
+      `
+  $('#edit_card').remove()
+  $('#profile_card').append(newCard)
+  $('#first_name').append(data.first_name)
+  $('#last_name').append(data.last_name)
+  $('#phone_number').append(data.phone_number)
+  $('#email_address').append(data.email_address)
+  $('#skill_level_id').append(data.skill_level_id)
+  $('#bio').append(data.bio)
+  $('#editButton').click(function(event) {
+    event.preventDefault()
+    editWindow()
+  })
+}
 
 const ajaxGetLessons = () => {
   $.get('/lessons', (result) => {
@@ -132,18 +186,3 @@ $(document).ready(() => {
     // onClose: function(el) {}
   })
 })
-
-/* TESTs */
-// const sendInfo = {
-//   user_client_id: "1",
-//   user_instructor_id: "2",
-//   cost: "$60",
-//   date_time: "12/23/17 1:00PM",
-//   lesson_name: "Intro to Electric Guitar",
-//   location: "CU School of Music",
-// }
-// console.log(ajaxGetLessons())
-// console.log(ajaxGetLessonId(3))
-// lessonPost(sendInfo)
-// lessonPatch(1, {cost: 90, date_time: "FredTime"})
-// lessonDelete(2)

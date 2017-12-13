@@ -21,7 +21,7 @@ suite('02_lessons migrations', addDatabaseHooks(() => {
           user_client_id: {
             type: 'integer',
             maxLength: null,
-            nullable: false,
+            nullable: true,
             defaultValue: null
           },
 
@@ -46,7 +46,14 @@ suite('02_lessons migrations', addDatabaseHooks(() => {
             defaultValue: '\'\'::character varying'
           },
 
-          date_time: {
+          date: {
+            type: 'character varying',
+            maxLength: 255,
+            nullable: false,
+            defaultValue: '\'\'::character varying'
+          },
+
+          time: {
             type: 'character varying',
             maxLength: 255,
             nullable: false,

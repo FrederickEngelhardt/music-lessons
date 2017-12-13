@@ -8,7 +8,8 @@ exports.up = function(knex, Promise) {
     table.foreign('user_instructor_id').references('users.id')
     table.string('location').notNullable().defaultsTo('')
     table.string('cost').notNullable().defaultsTo('')
-    table.string('date_time').notNullable().defaultsTo('')
+    table.string('date').notNullable().defaultsTo('')
+    table.string('time').notNullable().defaultsTo('')
     table.string('lesson_name').notNullable().defaultsTo('')
   })
 }

@@ -9,7 +9,7 @@ const getAllLessons = () => {
               $('.build_tables').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
-                  <td>${element.date_time}</td>
+                  <td>${element.time}</td>
                   <td>${element.location}</td>
                   <td>${element.cost}</td>
                   <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
@@ -17,34 +17,34 @@ const getAllLessons = () => {
                 </tr>
                 ` )
 
-        // $(`#open_lesson_${element.id}`).click( (event) => {
-        //   $.get('/token').done( (user_result) => {
-        //     const user_identity = user_result.cookie.user_id
-        //     let data = {
-        //       user_client_id: user_identity
-        //     }
-        //     $.ajax({
-        //       headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //       },
-        //       type: "PATCH",
-        //       url: `/lessons/${element.id}`,
-        //       dataType: "json",
-        //       success: function(msg) {
-        //         if (msg) {
-        //           console.log(`Successfully added this lesson to your schedule.`);
-        //         } else {
-        //           alert("Cannot add to list.")
-        //         }
-        //       },
-        //       data: JSON.stringify(data)
-        //     })
-        //   }).done( () => {
-        //     $(`#tr_${element.id}`).remove()
-        //   })
-        //
-        // })
+        $(`#open_lesson_${element.id}`).click( (event) => {
+          $.get('/token').done( (user_result) => {
+            const user_identity = user_result.cookie.user_id
+            let data = {
+              user_client_id: user_identity
+            }
+            $.ajax({
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              type: "PATCH",
+              url: `/lessons/${element.id}`,
+              dataType: "json",
+              success: function(msg) {
+                if (msg) {
+                  console.log(`Successfully added this lesson to your schedule.`);
+                } else {
+                  alert("Cannot add to list.")
+                }
+              },
+              data: JSON.stringify(data)
+            })
+          }).done( () => {
+            $(`#tr_${element.id}`).remove()
+          })
+
+        })
       })
     }
     })
@@ -179,7 +179,7 @@ $(document).ready(() => {
   $('.modal').modal();
   $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300
-    edge: 'right', // Choose the horizontal origin
+    edge: 'left', // Choose the horizontal origin
     closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: true,
     // onOpen: function(el) {}

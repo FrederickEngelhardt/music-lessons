@@ -10,25 +10,7 @@ const getAllLessons = () => {
     })
   })
 }
-$(document).ready(() => {
-  getAllLessons()
-    $('.modal').modal();
-    $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 300
-        edge: 'right', // Choose the horizontal origin
-        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        draggable: true,
-        // onOpen: function(el) {}
-        // onClose: function(el) {}
-      })
-  $('.addLesson').on('click', (event) => {
-    event.preventDefault()
-    $.get('/token', data => {
-      const id = data.cookie.user_id
-      $.patch('/lessons')
-    })
-  })
-})
+
 
 const ajaxGetLessons = () => {
   $.get('/lessons', (result) => {
@@ -97,14 +79,18 @@ const lessonDelete = (...id) => {
       })
   })
 }
-
-// $(document).ready(() => {
-//   $('#LESSONPOSTBUTTON').on('click', (event) => {
-//     $.get('/token', data => {
-//       console.log(data);
-//     })
-//   })
-// })
+$(document).ready(() => {
+  getAllLessons()
+    $('.modal').modal();
+    $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 300
+        edge: 'right', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true,
+        // onOpen: function(el) {}
+        // onClose: function(el) {}
+      })
+})
 
 /* TESTs */
 // const sendInfo = {

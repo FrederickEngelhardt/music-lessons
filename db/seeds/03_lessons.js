@@ -6,7 +6,8 @@ exports.seed = function(knex, Promise) {
       user_instructor_id: 3,
       location: 'CU School of Music',
       cost: '$60',
-      date_time: '12/23/17 1:00PM',
+      date: '12/23/17',
+      time: '1:00PM',
       lesson_name: 'Intro to Electric Guitar'
     },
 
@@ -16,7 +17,8 @@ exports.seed = function(knex, Promise) {
       user_instructor_id: 3,
       location: 'Galvanize Rooftop',
       cost: '$50',
-      date_time: '12/18/17 1:00PM',
+      date: '12/18/17',
+      time: '1:00PM',
       lesson_name: 'How to throw your Guitar 101.'
     }
 

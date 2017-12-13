@@ -46,7 +46,14 @@ suite('02_lessons migrations', addDatabaseHooks(() => {
             defaultValue: '\'\'::character varying'
           },
 
-          date_time: {
+          date: {
+            type: 'character varying',
+            maxLength: 255,
+            nullable: false,
+            defaultValue: '\'\'::character varying'
+          },
+
+          time: {
             type: 'character varying',
             maxLength: 255,
             nullable: false,

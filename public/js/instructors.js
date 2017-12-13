@@ -11,7 +11,6 @@ $.ajax({
      if (data) {
        for (let i = 0; i < data.length; i++) {
          if (data[i].skill_level_id === 4) {
-           console.log(data[i])
            $('.instructor-body').append(
              `
              <div class="row">

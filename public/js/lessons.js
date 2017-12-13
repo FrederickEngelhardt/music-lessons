@@ -1,14 +1,10 @@
 const getAllLessons = () => {
   $.get('/lessons').done(result => {
-    console.log(result);
     result.forEach((element) => {
-      console.log(element);
       const id = element.user_instructor_id
       const student = element.user_client_id
-      console.log(student);
       if (student === null){
       $.get(`/users/${id}`).done( user_data => {
-        console.log(user_data);
               $('tbody').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>

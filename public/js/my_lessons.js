@@ -4,7 +4,6 @@ $(document).ready(() => {
     $.get('/lessons', (data) => {
       data.forEach( (element) => {
         if (element.user_client_id === id){
-          console.log(element);
           // list the lesson
           // get instructor first_name
           $.get(`/users/${element.user_instructor_id}`, instructor => {

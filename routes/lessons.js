@@ -17,7 +17,7 @@ const authorize = (req, res, next) => {
 }
 
 router.get('/lessons', authorize, (req, res, next) => {
-  return knex('lessons').orderBy('date_time', 'desc')
+  return knex('lessons').orderBy('id', 'asc')
     .then(data => {
       console.log(data);
       res.status(200).json(data)

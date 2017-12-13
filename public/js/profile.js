@@ -15,7 +15,8 @@ const createAccountOverview = (data) => {
             </tr>
             <tr>
               <td>Phone Number</td>
-              <input><td id="phone_number"></td>
+              <
+              ><td id="phone_number"></td>
             </tr>
             <tr>
               <td>Email</td>
@@ -58,8 +59,8 @@ const getAccount = () => {
   })
 }
 const editWindow = () => {
-  const editCard = `<div id="edit_card" class="card">
-
+  const editCard = `
+  <div id="edit_card" class="card">
       <table class="highlight">
         <thead>
           <h3>Edit Profile</h3>
@@ -68,13 +69,22 @@ const editWindow = () => {
           <tr>
             <td>Phone Number</td>
             <td>
-              <input type="tel" id="phone_number">
+              <input placeholder='XXX-XXX-XXXX' type="tel" id="phone_number">
             </td>
           </tr>
           <tr>
             <td>Bio</td>
             <td>
-              <input type="text" id="bio">
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div placeholder='XXX-XXX-XXXX' class="input-field white col s12">
+                      <textarea id="bio" class="materialize-textarea"></textarea>
+                      <label for="bio">Tell us about yourself.</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </td>
           </tr>
         </tbody>
@@ -131,6 +141,8 @@ const submitEdit = () => {
 }
 
 $(document).ready(() => {
+  $('#textarea1').val('New Text');
+ $('#textarea1').trigger('autoresize');
   $('#editButton').click(function(event) {
     event.preventDefault()
     editWindow()

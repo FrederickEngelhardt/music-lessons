@@ -142,6 +142,13 @@ label {
   font-weight: 300;
   background-color: #FAAD00;
 }
+#create_lesson {
+  line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
+}
 #browse_lessons {
   padding: 11px;
   height: 60px;
@@ -169,6 +176,13 @@ label {
   position: relative;
   top: 10px;
   line-height: 60px;
+}
+#modal4 {
+  width: 100%;
+}
+#bio-text {
+  color: black;
+  font-size: 18
 }
 /* End of home menu*/
 
@@ -238,8 +252,8 @@ label {
 
 #myLessonsTable{
   padding-top: -180px;
-  background-color: white;
-  font-size: 18px;
+  font-size: 14px;
+  color: #fff
 }
 
 /*****end my lessons*****/

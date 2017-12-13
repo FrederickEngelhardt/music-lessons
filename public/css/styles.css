@@ -213,7 +213,7 @@ label {
 }
 
 #instructorLogo{
-  top: -50px;
+  top: -60px;
   font-size: 20px;
   font-weight: 300;
   background-color: #faad00;
@@ -224,9 +224,9 @@ label {
 
 /*****lessons*****/
 #home_lessons_btn{
-  padding: 12px;
+  line-height: inherit;
   margin-bottom: 80px;
-  font-size: 17px;
+  font-size: 20px;
   background-color: #FAAD00;
 }
 
@@ -244,9 +244,9 @@ label {
 
 /*****my lessons*****/
 #home_my_lessons_btn{
-  padding: 12px;
+  line-height: inherit;
   margin-bottom: 80px;
-  font-size: 17px;
+  font-size: 20px;
   background-color: #FAAD00;
 }
 

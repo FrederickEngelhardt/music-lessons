@@ -19,6 +19,7 @@ const authorize = (req, res, next) => {
 router.get('/lessons', authorize, (req, res, next) => {
   return knex('lessons').orderBy('date_time', 'desc')
     .then(data => {
+      console.log(data);
       res.status(200).json(data)
     })
     .catch(err => {
@@ -47,10 +48,8 @@ router.get('/lessons/:id', authorize, (req, res, next) => {
 
 router.post('/lessons', authorize, (req, res, next) => {
   const { user_client_id, user_instructor_id, location, cost, date_time, lesson_name } = req.body
+  console.log(req.body);
   const newLesson = { user_client_id, user_instructor_id, location, cost, date_time, lesson_name }
-  if (!user_client_id) {
-    return next({ status: 400, message: `Instructor ID must not be blank` })
-  }
   if (!user_instructor_id) {
     return next({ status: 400, message: `Instructor ID must not be blank` })
   }
@@ -69,7 +68,8 @@ router.post('/lessons', authorize, (req, res, next) => {
   return knex.insert(newLesson, '*')
     .into('lessons')
     .then(data => {
-      res.status(201).json(data[0])
+      console.log(data);
+      res.json(data[0])
     })
     .catch(err => {
       next(err)

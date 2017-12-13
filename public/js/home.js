@@ -23,15 +23,6 @@
 
 })()
 
-// const studentFields = () => {
-//   $('.add_lessons').append(`
-//         <div class='row home-menu center'>
-//           <div class="center col s12 m12 l12">
-//             <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
-//             <text>View Lessons</text></a>
-//           </div>
-//         </div>`)
-// }
 const instructorFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
@@ -63,7 +54,7 @@ const checkPrivileges = () => {
 /* These are all profile card functions*/
 const createAccountOverview = (data) => {
   const newCard = `
-  <div id="myProfile" class="card">
+  <div id="myProfile">
         <table class="highlight">
           <thead>
             <h3>My Profile</h3>
@@ -107,6 +98,7 @@ const createAccountOverview = (data) => {
   $('#phone_number').append(data[0].phone_number)
   $('#email_address').append(data[0].email_address)
   $('#skill_level_id').append(data[0].skill_level_id)
+  console.log(data);
   $('#bio').append(data[0].bio)
   $('#editButton').click(function(event) {
     event.preventDefault()
@@ -170,11 +162,12 @@ const editWindow = () => {
 }
 const submitEdit = () => {
   let phone_number = $('#phone_number').val()
-  let bio = $('#bio').val()
+  let bio = $('#bio-text').val()
   let data = {
     phone_number,
-    bio
+    bio,
   }
+  console.log(data);
   for (i in data) {
     if (data[i] === '') {
       delete data[i]
@@ -209,6 +202,10 @@ const createListeners = () => {
   $('#editButton').click(function(event) {
     event.preventDefault()
     editWindow()
+  })
+  $('#submitButton').click( (event) => {
+    event.preventDefault()
+    submitEdit()
   })
 }
 /* End of profile functions */

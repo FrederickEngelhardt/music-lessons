@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "knex": "knex",
+    "start": "node server.js",
+    "heroku-postbuild": "knex migrate:latest"
   },
   "repository": {
     "type": "git",

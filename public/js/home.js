@@ -125,15 +125,12 @@ const editWindow = () => {
         <thead>
           <h4>Edit Profile</h4>
         </thead>
-<<<<<<< HEAD
         <input>
         <tbody id="edit_card_body">
-=======
         <tbody>
         <tr class="row">
         <td class="col s3 m3 l3">Profile Picture</td>
         <td class="col s9 m9 l9"><input type="file" class="dropify" data-max-file-size="3M"></td>
->>>>>>> f5553b0416c88c933a239bff81130159a32c297d
           <tr class="row">
             <td class="col s3 m3 l3">Phone</td>
             <td class="col s9 m9 l9">
@@ -146,11 +143,8 @@ const editWindow = () => {
               <div class="row">
                 <form class="col s12">
                   <div class="row">
-<<<<<<< HEAD
                     <div placeholder='XXX-XXX-XXXX' class="input-field col s12">
-=======
                     <div class="input-field white col s12">
->>>>>>> f5553b0416c88c933a239bff81130159a32c297d
                       <textarea id="bio-text" class="materialize-textarea"></textarea>
                       <label for="bio">Tell us about yourself.</label>
                     </div>

@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="icon" href="./favicon.ico?" type="image/x-icon">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -24,18 +26,20 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" data-activates="mobile-demo" class="waves-effect waves-orange right button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right">
-        <li><a href="home.html"><i class="material-icons">home</i></a></li>
-        <!-- Trigger modal3 -->
-        <li><a class="waves-effect waves-orange modal-trigger" href="#modal3"><i class="material-icons">help</i></a></li>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="my_lessons.html">My Lessons</a></li>
+        <li><a id="logout" href="index.html">Logout</a></li>
+      </ul>
+      <ul>
+        <li><a class="waves-effect waves-orange modal-trigger" href="#modal1"><i class="material-icons">help</i></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li><a href="home.html">Home</a></li>
-        <li><a href="lessons.html">My Lessons</a></li>
+        <li><a href="my_lessons.html">My Lessons</a></li>
         <li><a id="logout" href="index.html">Logout</a></li>
       </ul>
-
     </div>
   </nav>
   <div class="row nav-align center">
@@ -51,16 +55,6 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <p class="modal-text">Browse instructors and view their lesson availability.</p>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <h4>View Lessons</h4>
-      <p class="modal-text">Here you can view all of your scheduled lessons.</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-orange btn-flat">Close</a>
     </div>
   </div>
 

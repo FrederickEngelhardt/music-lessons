@@ -227,9 +227,8 @@ const createListeners = () => {
 const createLesson = (data) => {
   if (!data) {
     const lesson_name = $('#new_lesson_name').val()
-    const new_lesson_date = $('#new_lesson_date').val()
-    const new_lesson_time = $('#new_lesson_time').val()
-    const date_time = `${new_lesson_date} ${new_lesson_time}`
+    const date = $('#new_lesson_date').val()
+    const time = $('#new_lesson_time').val()
     const location = $('#new_lesson_location').val()
     const cost = $('#new_lesson_cost').val()
     const instrument_type = $('#instrument_type').val()
@@ -238,7 +237,8 @@ const createLesson = (data) => {
         user_client_id: null,
         user_instructor_id: result.cookie.user_id,
         lesson_name,
-        date_time,
+        date,
+        time,
         location,
         cost
       }
@@ -360,7 +360,7 @@ $(document).ready(() => {
   })
   $('.button-collapse').sideNav({
     menuWidth: 300, // Default is 300
-    edge: 'right', // Choose the horizontal origin
+    edge: 'left', // Choose the horizontal origin
     closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: true,
     // onOpen: function(el) {}

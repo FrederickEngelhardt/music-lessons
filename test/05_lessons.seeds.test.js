@@ -18,7 +18,7 @@ suite('04_lessons seeds', addDatabaseHooks(() => {
             location: 'CU School of Music',
             cost: '$60',
             date: '12/23/17',
-            time:  ' 1:00PM',
+            time:  '1:00PM',
             lesson_name: 'Intro to Electric Guitar'
           }
         ];

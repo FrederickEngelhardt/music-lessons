@@ -42,7 +42,8 @@ router.get('/users/:id/lessons', (req, res, next) => {
   }
   return knex('users')
     .join('lessons', 'users.id', 'lessons.user_client_id')
-    .where('lessons.user_client_id', users.id)
+    .where('lessons.user_client_id', id)
+    .first()
     .then(result => {
       res.status(200).json(result)
     })

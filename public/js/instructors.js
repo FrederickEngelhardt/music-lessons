@@ -22,7 +22,7 @@ $.ajax({
                      <span class="card-title black">${data[i].first_name} ${data[i].last_name}</span>
                    </div>
                    <div class="card-content">
-                     <p id="bio">${data[i].bio}.</p>
+                     <p id="instructor_bio">${data[i].bio}.</p>
                    </div>
                    <div class="card-action">
                      <a id="lessonAvail" href="lessons.html">Lesson availability</a>

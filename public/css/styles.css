@@ -262,8 +262,8 @@ label {
 .addLesson {
   font-size: 22px;
 }
-tr {
-  height: 100px;
+.table-row-lessons {
+  height: 90px;
 }
 /*****end lessons*****/
 

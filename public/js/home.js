@@ -348,6 +348,29 @@ const createLessonModal = () => {
     createLesson()
   })
 }
+
+$.ajax({
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  type: "POST",
+  url: `https://s3-us-west-2.amazonaws.com/?`,
+  dataType: "json",
+  success: function(msg) {
+    if (msg) {
+      console.log(`User information was successfully update!`);
+    } else {
+      alert("Cannot add to list.")
+    }
+  },
+  data: JSON.stringify('./images/background.png')
+}).done((result) => {
+  console.log(result);
+})
+
+
+
 $(document).ready(() => {
   $('.dropify').dropify()
   checkPrivileges()

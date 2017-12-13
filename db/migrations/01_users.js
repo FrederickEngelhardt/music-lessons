@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
     table.integer('skill_level_id').notNullable()
     table.foreign('skill_level_id').references('skill_levels.id')
     table.text('bio').notNullable().defaultTo('New User')
+    table.
     table.timestamp('created_at').notNullable().defaultTo(knex.raw('now()'))
         table.timestamp('updated_at').notNullable().defaultTo(knex.raw('now()'))  })
 }

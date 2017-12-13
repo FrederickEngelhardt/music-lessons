@@ -23,12 +23,21 @@
 
 })()
 
-const instructorFields = () => {
+const studentFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
           <div class="center col s12 m6 l6">
             <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
             <text>Add Lesson</text></a>
+          </div>
+        </div>`)
+}
+const instructorFields = () => {
+  $('.add_lessons').append(`
+        <div class='row home-menu center'>
+          <div class="center col s12 m6 l6">
+            <a id="create_lesson" class="home-button btn waves-effect waves-light" type="submit" name="action" href="#">
+            <text>Create Lesson</text></a>
           </div>
         </div>`)
 }
@@ -40,8 +49,12 @@ const checkPrivileges = () => {
     $.get(`/users/${id}`)
       .done(data => {
         skill_level = data.skill_level_id
-        if (skill_level == 4){return instructorFields()}
-        console.log(skill_level);
+        if (skill_level == 4){
+          instructorFields()
+          studentFields()
+          return
+        }
+        else {return studentFields()}
       })
   })
 }
@@ -153,10 +166,7 @@ const editWindow = () => {
     `
   $('#myProfile').remove()
   $('#profile_card').append(editCard)
-  $('#submitButton').click(function(event) {
-    event.preventDefault()
-    submitEdit()
-  })
+  createListeners()
 }
 const submitEdit = () => {
   let phone_number = $('#phone_number').val()

@@ -142,6 +142,13 @@ label {
   font-weight: 300;
   background-color: #FAAD00;
 }
+#create_lesson {
+  line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
+}
 #browse_lessons {
   padding: 11px;
   height: 60px;
@@ -216,7 +223,7 @@ label {
 
 
 /*****lessons*****/
-#home_lessons_btn{  
+#home_lessons_btn{
   padding: 12px;
   margin-bottom: 80px;
   font-size: 17px;

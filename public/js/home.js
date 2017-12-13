@@ -156,7 +156,7 @@ const editWindow = () => {
         </tbody>
       </table>
       <div class="row center">
-        <a href="./profile.html" id="submitButton" class="waves-effect waves-light btn">
+        <a href="#" id="submitButton" class="waves-effect waves-light btn">
           <p class="login-button">save changes</p>
         </a>
       </div>
@@ -212,7 +212,27 @@ const createListeners = () => {
 /* End of profile functions */
 
 /* Beginning of instructor lesson creation fields*/
-const createLesson = () => {
+const createLesson = (data) => {
+  if (!data) {
+
+  }
+  $.ajax({
+     headers : {
+          'Accept' : 'application/json',
+          'Content-Type' : 'application/json'
+      },
+     type: "POST",
+     url: "/lessons",
+     dataType: "json",
+     success: function (msg) {
+         if (msg) {
+             console.log("Lesson" + sendInfo.lesson_name + " was added in list !");
+         } else {
+             alert("Cannot add to list !");
+         }
+     },
+     data: JSON.stringify(data)
+  });
 }
 
 
@@ -226,7 +246,18 @@ const createLesson = () => {
 $(document).ready(() => {
   checkPrivileges()
   getAccount()
-  $('.modal').modal();
+  $('.modal').modal({
+    dismissible: true, // Modal can be dismissed by clicking outside of the modal
+    opacity: .5, // Opacity of modal background
+    inDuration: 300, // Transition in duration
+    outDuration: 200, // Transition out duration
+    startingTop: '4%', // Starting top style attribute
+    endingTop: '10%', // Ending top style attribute
+    // ready: function(modal, trigger) {
+    // },
+    // complete: function() {}
+  }
+)
   $('.button-collapse').sideNav({
       menuWidth: 300, // Default is 300
       edge: 'right', // Choose the horizontal origin

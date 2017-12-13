@@ -58,7 +58,7 @@
     </div>
     <div class='row home-menu center'>
       <div class="center col s12 m6 l6">
-        <a id="account_preferences" class="btn waves-effect waves-orange modal-trigger" href="#modal4" type="submit" name="action">
+        <a id="account_preferences" class="btn waves-effect waves-orange modal-trigger" href="#account_preferences_modal" type="submit" name="action">
           <text>My Account</text></a>
       </div>
     </div>
@@ -69,8 +69,13 @@
         <p class="modal-text">As a student, schedule lessons and add payment method. As a teacher, add lesson availability.</p>
       </div>
     </div>
+    <div id="create_lesson_modal" class="modal">
+      <div class="modal-content">
+        <h4>create a lesson</h4>
 
-    <div id="modal4" class="modal">
+      </div>
+    </div>
+    <div id="account_preferences_modal" class="modal">
       <div class="modal-content">
         <!-- profile information is inserted in here -->
         <div id="profile_card" class="row center">
@@ -112,6 +117,9 @@
               </table>
               <div class="row center">
                 <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
               </div>
             </div>
           </div>

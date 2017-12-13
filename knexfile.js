@@ -23,7 +23,7 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: music_lessons_dev,
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory:'./db/migrations'
     },

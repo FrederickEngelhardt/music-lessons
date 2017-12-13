@@ -59,7 +59,8 @@ const createAccountOverview = (data) => {
           <thead>
             <h3>My Profile</h3>
           </thead>
-          <tbody>
+          <input>
+          <tbody class="profBody">
             <tr>
               <td>First Name</td>
               <td id="first_name"></td>
@@ -70,7 +71,7 @@ const createAccountOverview = (data) => {
             </tr>
             <tr>
               <td>Phone Number</td>
-              <input><td id="phone_number"></td>
+              <td id="phone_number"></td>
             </tr>
             <tr>
               <td>Email</td>
@@ -88,9 +89,6 @@ const createAccountOverview = (data) => {
         </table>
         <div class="row center">
           <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
         </div>
       </div>
       `
@@ -122,14 +120,15 @@ const getAccount = () => {
 }
 const editWindow = () => {
   const editCard = `
-  <div id="edit_card" class="">
-      <table class="highlight">
+  <div id="edit_card">
+      <table>
         <thead>
-          <h3>Edit Profile</h3>
+          <h4>Edit Profile</h4>
         </thead>
-        <tbody>
+        <input>
+        <tbody id="edit_card_body">
           <tr class="row">
-            <td class="col s3 m3 l3">Phone Number</td>
+            <td class="col s3 m3 l3">Phone</td>
             <td class="col s9 m9 l9">
               <input placeholder='XXX-XXX-XXXX' type="tel" id="phone_number">
             </td>
@@ -140,7 +139,7 @@ const editWindow = () => {
               <div class="row">
                 <form class="col s12">
                   <div class="row">
-                    <div placeholder='XXX-XXX-XXXX' class="input-field white col s12">
+                    <div placeholder='XXX-XXX-XXXX' class="input-field col s12">
                       <textarea id="bio-text" class="materialize-textarea"></textarea>
                       <label for="bio">Tell us about yourself.</label>
                     </div>
@@ -152,12 +151,8 @@ const editWindow = () => {
         </tbody>
       </table>
       <div class="row center">
-        <a href="#" id="submitButton" class="waves-effect waves-light btn">
-          <p class="login-button">save changes</p>
-        </a>
-      </div>
-      <div class="modal-footer">
-        <a id="exit_edit" class="modal-action waves-effect waves-green btn-flat"><i class="material-icons">chevron_left</i>
+        <a href="home.html" id="submitButton" class="waves-effect waves-light btn">
+          <p>save changes</p>
         </a>
       </div>
     </div>
@@ -269,7 +264,7 @@ const createLessonModal = () => {
   <div id="new_lesson_modal" class="modal">
     <div class="modal-content">
       <div>
-        <table class="highlight">
+        <table>
           <thead>
             <h3>Create a Lesson</h3>
           </thead>

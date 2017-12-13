@@ -10,7 +10,7 @@ const getAllLessons = () => {
       $.get(`/users/${id}`).done( user_data => {
         console.log(user_data);
               $('tbody').append(`
-                <tr>
+                <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
                   <td>${element.date_time}</td>
                   <td>${element.location}</td>
@@ -41,6 +41,8 @@ const getAllLessons = () => {
               },
               data: JSON.stringify(data)
             })
+          }).done( () => {
+            $(`#tr_${element.id}`).remove()
           })
 
         })

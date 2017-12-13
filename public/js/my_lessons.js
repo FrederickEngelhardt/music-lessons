@@ -1,22 +1,56 @@
 $(document).ready(() => {
   $.get('/token', result => {
-    console.log(result);
     const id = result.cookie.user_id
-    $.get('/lessons', ([data]) => {
+    $.get('/lessons', (data) => {
+      data.forEach( (element) => {
+        if (element.user_client_id === id){
+          console.log(element);
+          // list the lesson
+          // get instructor first_name
+          $.get(`/users/${element.user_instructor_id}`, instructor => {
+            $('tbody').append(`
+              <tr id="tr_${element.id}"">
+                <td>${instructor.first_name}</td>
+                <td>${element.date_time}</td>
+                <td>${element.location}</td>
+                <td>${element.cost}</td>
+                <td> <a id="${element.id}" class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="red material-icons">remove</i></a></td>
+              </tr>
+              `)
+              $(`#${element.id}`).click( (event) => {
+                  let data = {
+                    user_client_id: null
+                  }
+                  $.ajax({
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    type: "PATCH",
+                    url: `/lessons/${element.id}`,
+                    dataType: "json",
+                    success: function(msg) {
+                      if (msg) {
+                        console.log(`Removed this lesson from your schedule.`);
+                      } else {
+                        alert("Cannot add to list.")
+                      }
+                    },
+                    data: JSON.stringify(data)
+                  })
+                  .done( () => {
+                  console.log('activated');
+                  $(`#tr_${element.id}`).remove()
+                })
+              })
+          })
+        }
+      }
+      )
       const client = data.user_client_id
 
       if (client === id) {
-        $.get(`/users/${id}`, user => {
-          $('tbody').append(`
-            <tr>
-              <td>${user.first_name}</td>
-              <td>${user.date_time}</td>
-              <td>${user.location}</td>
-              <td>${user.cost}</td>
-              <td> <a class="addLesson red btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">remove</i></a></td>
-            </tr>
-            `)
-        })
+
       }
     })
   })

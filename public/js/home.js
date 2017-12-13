@@ -252,7 +252,7 @@ const createLesson = (data) => {
         },
         data: JSON.stringify(data)
       }).done( (result) => {
-        alert('You just posted a lesson!')
+        console.log('You just posted a lesson!')
       })
     })
   }

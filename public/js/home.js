@@ -26,16 +26,16 @@
 const studentFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
-          <div class="center col s12 m6 l6">
+          <div class="center col s12 m12 l12">
             <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
-            <text>Add Lesson</text></a>
+            <text>View Lessons</text></a>
           </div>
         </div>`)
 }
 const instructorFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
-          <div class="center col s12 m6 l6">
+          <div class="center col s12 m12 l12">
             <a id="create_lesson" class="home-button btn waves-effect waves-light modal-trigger" type="submit" name="action" href="#new_lesson_modal">
             <text>Create Lesson</text></a>
           </div>

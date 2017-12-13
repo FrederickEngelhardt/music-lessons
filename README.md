@@ -2,9 +2,13 @@
 
 A web application for scheduling music lessons
 
+## Heroku
+
+[Heroku App](https://q2-music-lessons.herokuapp.com/)
+
 ## Installation
 
-- Clone the repository and run npm install
+- Clone the repository and run `npm install`
 
 ```shell
 createdb music_lessons_dev
@@ -17,12 +21,14 @@ knex seed:run
 ```shell
 bash -c 'echo "JWT_KEY="$(openssl rand -base64 64)' > .env
 ```
+- Run tests using `npm test`
 
 
 ## Routes
 
 - GET users/
 - GET users/id
+- GET users/id/lessons
 - POST users/
 - PATCH users/id
 - DELETE users/id
@@ -54,7 +60,7 @@ bash -c 'echo "JWT_KEY="$(openssl rand -base64 64)' > .env
 - Font - YuKyokasho
 - Pod Colors - #FAAD00 - yellow
 - Background - #333030 - dark grey
-- Font color - white/ black where obvious
+- Font color - white / black 
 - Logo border & background graphic - #95989A
 
 ## Wire Frames

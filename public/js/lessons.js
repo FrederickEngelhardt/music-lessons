@@ -1,6 +1,7 @@
 $(document).ready(() => {
   $.get('/lessons')
     .done(([data]) => {
+      console.log(data);
       const id = data.user_instructor_id
       $.get(`/users/${id}`)
         .done(user => {

@@ -21,7 +21,7 @@ suite('02_lessons migrations', addDatabaseHooks(() => {
           user_client_id: {
             type: 'integer',
             maxLength: null,
-            nullable: false,
+            nullable: true,
             defaultValue: null
           },
 

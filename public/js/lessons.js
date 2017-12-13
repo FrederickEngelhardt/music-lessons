@@ -23,7 +23,7 @@ const lessonCard = (element, user_data) => {
     $(`#lesson_card_date`).append(element.date)
     $(`#lesson_card_time`).append(element.time)
     $(`#lesson_card_location`).append(element.location)
-    $(`#lesson_card_price`).append(element.cost)
+    $(`#lesson_card_price`).append(`$${element.cost}`)
   })
 }
 const getAllLessons = () => {
@@ -39,7 +39,7 @@ const getAllLessons = () => {
                   <td>${user_data.first_name}</td>
                   <td>${element.time}</td>
                   <td>${element.location}</td>
-                  <td>${element.cost}</td>
+                  <td>$${element.cost}</td>
                   <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
                   </i></a></td>
                 </tr>

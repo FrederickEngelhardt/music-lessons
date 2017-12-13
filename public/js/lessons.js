@@ -3,10 +3,14 @@ const getAllLessons = () => {
     result.forEach( (element) => {
       console.log(element);
       const id = element.user_instructor_id
+      const student = element.user_client_id
+      console.log(student);
+      if (student === null){
       $.get(`/users/${id}`).done( user_data => {
         console.log(user_data);
               $('tbody').append(`<tr><td>${user_data.first_name}</td><td>${element.date_time}</td><td>${element.location}</td><td>${element.cost}</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>` )
       })
+    }
     })
   })
 }

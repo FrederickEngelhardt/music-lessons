@@ -5,12 +5,40 @@ const getAllLessons = () => {
       const id = element.user_instructor_id
       const student = element.user_client_id
       console.log(student);
-      if (student === null) {
-        $.get(`/users/${id}`).done(user_data => {
-          console.log(user_data);
-          $('tbody').append(`<tr class="table-row-lessons"><td>${user_data.first_name}</td><td>${element.date_time}</td><td>${element.location}</td><td>$${element.cost}</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>`)
+      if (student === null){
+      $.get(`/users/${id}`).done( user_data => {
+        console.log(user_data);
+              $('tbody').append(`<tr><td>${user_data.first_name}</td><td>${element.date_time}</td><td>${element.location}</td><td>${element.cost}</td><td> <a class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="material-icons">add</i></a></td></tr>` )
+        $('.addLesson').on('click', (event) => {
+          $.get('/token', result => {
+            const id = result.cookie.user_id
+            let data = {
+              user_client_id: id
+            }
+            console.log(data);
+
+            $.ajax({
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+              type: "PATCH",
+              url: `/lessons/${element.id}`,
+              dataType: "json",
+              success: function(msg) {
+                if (msg) {
+                  console.log(`Lesson information was successfully update!`);
+                } else {
+                  alert("Cannot add to list.")
+                }
+              },
+              data: JSON.stringify(data)
+            })
+          })
+
         })
-      }
+      })
+    }
     })
   })
 }

@@ -53,8 +53,6 @@ const checkPrivileges = () => {
           instructorFields()
           createLessonModal()
           return
-        } else {
-          return studentFields()
         }
       })
   })

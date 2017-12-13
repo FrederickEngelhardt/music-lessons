@@ -6,6 +6,19 @@ A web application for scheduling music lessons
 
 - Clone the repository and run npm install
 
+```shell
+createdb music_lessons_dev
+createdb music_lessons_test
+knex migrate:latest
+knex seed:run
+```
+- Create the JWT_KEY
+
+```shell
+bash -c 'echo "JWT_KEY="$(openssl rand -base64 64)' > .env
+```
+
+
 ## Routes
 
 - GET users/

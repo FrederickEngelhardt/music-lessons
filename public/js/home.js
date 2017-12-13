@@ -23,15 +23,6 @@
 
 })()
 
-const studentFields = () => {
-  $('.add_lessons').append(`
-        <div class='row home-menu center'>
-          <div class="center col s12 m12 l12">
-            <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
-            <text>Add Lesson</text></a>
-          </div>
-        </div>`)
-}
 const instructorFields = () => {
   $('.add_lessons').append(`
         <div class='row home-menu center'>
@@ -51,19 +42,19 @@ const checkPrivileges = () => {
         skill_level = data.skill_level_id
         if (skill_level == 4) {
           instructorFields()
-          studentFields()
           createLessonModal()
           return
-        } else {
-          return studentFields()
         }
+        // else {
+        //   return studentFields()
+        // }
       })
   })
 }
 /* These are all profile card functions*/
 const createAccountOverview = (data) => {
   const newCard = `
-  <div id="myProfile" class="card">
+  <div id="myProfile">
         <table class="highlight">
           <thead>
             <h3>My Profile</h3>
@@ -98,16 +89,19 @@ const createAccountOverview = (data) => {
         <div class="row center">
           <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
         </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+        </div>
       </div>
       `
   $('#edit_card').remove()
   $('#profile_card').append(newCard)
-  $('#first_name').append(data[0].first_name)
-  $('#last_name').append(data[0].last_name)
-  $('#phone_number').append(data[0].phone_number)
-  $('#email_address').append(data[0].email_address)
-  $('#skill_level_id').append(data[0].skill_level_id)
-  $('#bio').append(data[0].bio)
+  $('#first_name').append(data.first_name)
+  $('#last_name').append(data.last_name)
+  $('#phone_number').append(data.phone_number)
+  $('#email_address').append(data.email_address)
+  $('#skill_level_id').append(data.skill_level_id)
+  $('#bio').append(data.bio)
   $('#editButton').click(function(event) {
     event.preventDefault()
     editWindow()
@@ -162,18 +156,30 @@ const editWindow = () => {
           <p class="login-button">save changes</p>
         </a>
       </div>
+      <div class="modal-footer">
+        <a id="exit_edit" class="modal-action waves-effect waves-green btn-flat"><i class="material-icons">chevron_left</i>
+        </a>
+      </div>
     </div>
     `
   $('#myProfile').remove()
   $('#profile_card').append(editCard)
   createListeners()
+  $('#exit_edit').click((event) => {
+    event.preventDefault()
+    $.get('/token').done(data => {
+      $.get(`/users/${data.cookie.user_id}`).done((results) => {
+        return createAccountOverview(results)
+      })
+    })
+  })
 }
 const submitEdit = () => {
   let phone_number = $('#phone_number').val()
-  let bio = $('#bio').val()
+  let bio = $('#bio-text').val()
   let data = {
     phone_number,
-    bio
+    bio,
   }
   for (i in data) {
     if (data[i] === '') {
@@ -201,7 +207,7 @@ const submitEdit = () => {
       },
       data: JSON.stringify(data)
     }).done((final_result) => {
-      createAccountOverview(final_result)
+      createAccountOverview(final_result[0])
     })
   })
 }
@@ -209,6 +215,10 @@ const createListeners = () => {
   $('#editButton').click(function(event) {
     event.preventDefault()
     editWindow()
+  })
+  $('#submitButton').click((event) => {
+    event.preventDefault()
+    submitEdit()
   })
 }
 /* End of profile functions */
@@ -223,9 +233,7 @@ const createLesson = (data) => {
     const location = $('#new_lesson_location').val()
     const cost = $('#new_lesson_cost').val()
     const instrument_type = $('#instrument_type').val()
-    $.get('/token').done ( result => {
-      console.log(result);
-      console.log(result.cookie.user_id);
+    $.get('/token').done(result => {
       data = {
         user_client_id: null,
         user_instructor_id: result.cookie.user_id,
@@ -234,7 +242,6 @@ const createLesson = (data) => {
         location,
         cost
       }
-      console.log(data);
       $.ajax({
         headers: {
           'Accept': 'application/json',
@@ -251,7 +258,7 @@ const createLesson = (data) => {
           }
         },
         data: JSON.stringify(data)
-      }).done( (result) => {
+      }).done((result) => {
         console.log('You just posted a lesson!')
       })
     })
@@ -320,7 +327,6 @@ const createLessonModal = () => {
   </div>
     `
   $('#create_lesson_modal_insert').html(html)
-  console.log('test');
   // #NOTE you need this listener
   $('.modal').modal({
     dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -333,7 +339,7 @@ const createLessonModal = () => {
     // },
     // complete: function() {}
   })
-  $('#createLessonSubmitButton').click( (event) =>{
+  $('#createLessonSubmitButton').click((event) => {
     event.preventDefault()
     createLesson()
   })

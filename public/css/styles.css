@@ -129,10 +129,12 @@ label {
 }
 /*****index*****/
 #login_btn{
+  background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 }
 #signup_btn{
+  background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
 }
@@ -259,6 +261,9 @@ label {
 
 .addLesson {
   font-size: 22px;
+}
+.table-row-lessons {
+  height: 90px;
 }
 /*****end lessons*****/
 

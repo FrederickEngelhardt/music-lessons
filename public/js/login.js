@@ -3,7 +3,6 @@ $(document).ready(function() {
     event.preventDefault()
     const email_address = $('#email').val()
     const password = $('#password').val()
-    console.log(email_address, password);
 
     const options = {
       contentType: 'application/json',

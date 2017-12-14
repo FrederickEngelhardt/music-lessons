@@ -1,7 +1,7 @@
 const lessonCard = (element, user_data) => {
   let html = `
   <div id="newButton" class="row center">
-    <a id="addLessonButton" class="modal-trigger btn waves-effect waves-light orange" type="submit" name="action" href="#open_lesson_confirmation_modal">Add Lesson</a>
+    <a id="addLessonButton" class="modal-trigger btn waves-effect waves-light" type="submit" name="action" href="#open_lesson_confirmation_modal">Add Lesson</a>
     </div>`
   $(`#open_lesson_${element.id}`).click((event) => {
     event.preventDefault()
@@ -63,12 +63,12 @@ const getAllLessons = () => {
         $.get(`/users/${id}`).done(user_data => {
           // console.log(user_data);
           $('.build_tables').append(`
-                <tr id="tr_${element.id}">
+                <tr id="tr_${element.id}" class = "lessons_table_font">
                   <td>${user_data.first_name}</td>
                   <td>${element.date}</td>
                   <td>${element.location}</td>
                   <td>$${element.cost}</td>
-                  <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
+                  <td> <a id="open_lesson_${element.id}" style="background-color:  #FAAD00" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
                   </i></a></td>
                 </tr>
                 `)
@@ -114,10 +114,10 @@ const createAccountOverview = (data) => {
           </tbody>
         </table>
         <div class="row center">
-          <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+          <button id="editButton" class="btn waves-effect waves-light" type="submit" name="action">Edit Profile</button>
         </div>
         <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+          <a href="#!" class="modal-action modal-close waves-effect waves btn-flat">Back</a>
         </div>
       </div>
       `

@@ -138,7 +138,9 @@ label {
   font-size: 20px;
 }
 #submitButton {
-  padding-top: 12px;
+  line-height: 25px;
+  padding-top: 5px;
+  font-size: 20px;
   background-color: #FAAD00;
 }
 /*****index*****/
@@ -148,7 +150,11 @@ label {
 
 }
 #editButton {
+  line-height: 25px;
   margin-top: 25px;
+  font-size: 20px;
+  background-color:#FAAD00;
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 #signup_btn{
   background-color: #FAAD00;
@@ -282,13 +288,29 @@ label {
   font-size: 20px;
   background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
+#addLessonButton{
+  padding-top: 9px;
+  font-size: 20px;
+  background-color: #FAAD00;
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #lessonsTable{
   padding-top: -180px;
   font-size: 14px;
   color: #fff
+}
+#open_lesson_{
+  background-color: #FAAD00;
+}
+#lesson_card_name{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.white-text{
+  font-size: 17px;
 }
 
 .addLesson {

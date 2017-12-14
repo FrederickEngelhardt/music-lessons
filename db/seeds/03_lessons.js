@@ -48,7 +48,7 @@ exports.seed = function(knex, Promise) {
       cost: 50,
       date: '2017-12-20',
       time: '6:00PM',
-      lesson_name: "Pickin' A Guitar"
+      lesson_name: 'Picking A Guitar'
     }
   ]).then(() => {
     return knex.raw(

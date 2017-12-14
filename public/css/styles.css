@@ -158,6 +158,9 @@ label {
 
 /*****end index*****/
 
+
+/*****start home*****/
+
 #loginScreenButton {
   line-height: 28px;
   height: 60px;
@@ -221,6 +224,16 @@ label {
   color: black;
   font-size: 18
 }
+
+#createLessonSubmitButton {
+  padding-top: 5px;
+  background-color: #FAAD00;
+}
+#createLessonBody {
+  font-size: 20px;
+  color: white;
+}
+
 /* End of home menu*/
 
 

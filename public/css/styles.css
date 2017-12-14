@@ -158,6 +158,9 @@ label {
 
 /*****end index*****/
 
+
+/*****start home*****/
+
 #loginScreenButton {
   line-height: 28px;
   height: 60px;
@@ -221,6 +224,20 @@ label {
   color: black;
   font-size: 18
 }
+
+#createLessonSubmitButton {
+  padding-top: 10px;
+  line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #FAAD00;
+}
+#createLessonBody {
+  font-size: 20px;
+  color: white;
+}
+
 /* End of home menu*/
 
 
@@ -290,7 +307,7 @@ label {
   font-size: 20px;
   background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  width: 210px;
+  width: 230px;
 }
 
 #myLessonsTable{

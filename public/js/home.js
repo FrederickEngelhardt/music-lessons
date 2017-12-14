@@ -88,7 +88,7 @@ const createAccountOverview = (data) => {
           </tbody>
         </table>
         <div class="row center">
-          <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+          <button id="editButton" class="btn waves-effect waves-light" type="submit" name="action">Edit Profile</button>
         </div>
       </div>
       `
@@ -127,7 +127,6 @@ const editWindow = () => {
         </thead>
         <input>
         <tbody id="edit_card_body">
-        <tbody>
         <tr class="row">
           <tr class="row">
             <td class="col s3 m3 l3">Phone</td>
@@ -142,7 +141,6 @@ const editWindow = () => {
                 <form class="col s12">
                   <div class="row">
                     <div placeholder='XXX-XXX-XXXX' class="input-field col s12">
-                    <div class="input-field white col s12">
                       <textarea id="bio-text" class="materialize-textarea"></textarea>
                       <label for="bio">Tell us about yourself.</label>
                     </div>
@@ -264,63 +262,61 @@ const createLesson = (data) => {
 }
 const createLessonModal = () => {
   const html = `
-  <div id="new_lesson_modal" class="modal">
+  <div id="new_lesson_modal" class="grey darken-3 modal">
     <div class="modal-content">
       <div>
         <table>
           <thead>
-            <h3>Create a Lesson</h3>
+            <h3 class="white-text center">Create Lesson</h3>
           </thead>
-          <tbody>
+          <input>
+          <tbody id="createLessonBody">
             <form action="alert('Lesson Created!')">
               <tr class="row">
-                <td class="col s3 m3 l3">Lesson Name</td>
+                <td class="col s3 m3 l3">Name</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="Please enter lesson name" type="text" id="new_lesson_name" required="required">
+                  <input placeholder="Enter lesson name." type="text" id="new_lesson_name" required="required">
                 </td>
               </tr>
               <tr class="row">
                 <td class="col s3 m3 l3">Date</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="enter date here" type="date" id="new_lesson_date" required="required">
+                  <input placeholder="Enter lesson date." type="date" id="new_lesson_date" required="required">
                 </td>
               </tr>
               <tr class="row">
                 <td class="col s3 m3 l3">Time</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="enter time here" type="time" id="new_lesson_time" required="required">
+                  <input placeholder="Enter lesson time." type="time" id="new_lesson_time" required="required">
                 </td>
               </tr>
               <tr class="row">
                 <td class="col s3 m3 l3">Location</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="please enter location of lesson" type="text" id="new_lesson_location" required="required">
+                  <input placeholder="Enter lesson location." type="text" id="new_lesson_location" required="required">
                 </td>
               </tr>
               <tr class="row">
-                <td class="col s3 m3 l3">Lesson cost</td>
+                <td class="col s3 m3 l3">Cost</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="enter lesson cost here" type="number" id="new_lesson_cost" required="required">
+                  <input placeholder="Enter lesson cost." type="number" id="new_lesson_cost" required="required">
                 </td>
               </tr>
               <tr class="row">
-                <td class="col s3 m3 l3">Instrument type</td>
+                <td class="col s3 m3 l3">Instrument</td>
                 <td class="col s9 m9 l9">
-                  <input placeholder="Please enter instrument type" type="text" id="instrument_type">
+                  <input placeholder="Enter instrument type." type="text" id="instrument_type">
                 </td>
               </tr>
             </form>
           </tbody>
         </table>
         <div class="row center">
-          <a href="#" id="createLessonSubmitButton" class="waves-effect waves-light btn">
-            <p class="login-button">Create Lesson</p>
+          <a href="#" id="createLessonSubmitButton" class="modal-close waves-effect waves-light btn">
+            <p class="login-button">Create</p>
           </a>
         </div>
       </div>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
     </div>
   </div>
     `

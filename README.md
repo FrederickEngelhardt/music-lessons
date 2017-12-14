@@ -7,8 +7,8 @@ A web application for scheduling music lessons
 [Heroku App](https://q2-music-lessons.herokuapp.com/)
 
 ## Installation
-Prerequisites:
-1. Install Postgresql
+
+**Install Postgresql
 
 - Clone the repository and run `npm install`
 ```shell

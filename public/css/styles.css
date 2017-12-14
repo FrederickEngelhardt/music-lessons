@@ -226,7 +226,11 @@ label {
 }
 
 #createLessonSubmitButton {
-  padding-top: 5px;
+  padding-top: 10px;
+  line-height: 28px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 300;
   background-color: #FAAD00;
 }
 #createLessonBody {

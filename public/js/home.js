@@ -88,7 +88,7 @@ const createAccountOverview = (data) => {
           </tbody>
         </table>
         <div class="row center">
-          <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
+          <button id="editButton" class="btn waves-effect waves-light" type="submit" name="action">Edit Profile</button>
         </div>
       </div>
       `
@@ -127,7 +127,6 @@ const editWindow = () => {
         </thead>
         <input>
         <tbody id="edit_card_body">
-        <tbody>
         <tr class="row">
           <tr class="row">
             <td class="col s3 m3 l3">Phone</td>
@@ -142,7 +141,6 @@ const editWindow = () => {
                 <form class="col s12">
                   <div class="row">
                     <div placeholder='XXX-XXX-XXXX' class="input-field col s12">
-                    <div class="input-field white col s12">
                       <textarea id="bio-text" class="materialize-textarea"></textarea>
                       <label for="bio">Tell us about yourself.</label>
                     </div>
@@ -314,8 +312,8 @@ const createLessonModal = () => {
           </tbody>
         </table>
         <div class="row center">
-          <a href="home.html" id="createLessonSubmitButton" class="waves-effect waves-light btn">
-            <p class="login-button">Create Lesson</p>
+          <a href="#" id="createLessonSubmitButton" class="modal-close waves-effect waves-light btn">
+            <p class="login-button">Create</p>
           </a>
         </div>
       </div>

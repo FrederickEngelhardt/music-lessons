@@ -25,16 +25,34 @@ const lessonCard = (element, user_data) => {
   })
 }
 const confirmationCard = (element, user_data) => {
-  const confirm = `
-  <div class="row center">
-      <a id="confirmButton" class="btn waves-effect waves-light green" type="submit" name="action" href="./payments.html">Confirm</a>
-      </div>`
-  const cancel = `
-  <div class="row center">
-        <a id="cancelButton" class="btn waves-effect waves-light red" type="submit" name="action" >Cancel</a>
-        </div>`
-  $('.confirm').append(confirm)
-  $('.cancel').append(cancel)
+  $(`#confirmButton`).click( (event) => {
+    $.get('/token').done( (user_result) => {
+      const user_identity = user_result.cookie.user_id
+      let data = {
+        user_client_id: user_identity
+      }
+      console.log(data);
+      $.ajax({
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        type: "PATCH",
+        url: `/lessons/${element.id}`,
+        dataType: "json",
+        success: function(msg) {
+          if (msg) {
+            console.log(`Successfully added this lesson to your schedule.`);
+          } else {
+            alert("Cannot add to schedule.")
+          }
+        },
+        data: JSON.stringify(data)
+      })
+    }).done( () => {
+    })
+
+  })
 }
 const getAllLessons = () => {
   $.get('/lessons').done(result => {
@@ -47,7 +65,7 @@ const getAllLessons = () => {
           $('.build_tables').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
-                  <td>${element.time}</td>
+                  <td>${element.date}</td>
                   <td>${element.location}</td>
                   <td>$${element.cost}</td>
                   <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle
@@ -55,34 +73,6 @@ const getAllLessons = () => {
                 </tr>
                 `)
           lessonCard(element, user_data)
-          // $(`#open_lesson_${element.id}`).click( (event) => {
-          //   $.get('/token').done( (user_result) => {
-          //     const user_identity = user_result.cookie.user_id
-          //     let data = {
-          //       user_client_id: user_identity
-          //     }
-          //     $.ajax({
-          //       headers: {
-          //         'Accept': 'application/json',
-          //         'Content-Type': 'application/json'
-          //       },
-          //       type: "PATCH",
-          //       url: `/lessons/${element.id}`,
-          //       dataType: "json",
-          //       success: function(msg) {
-          //         if (msg) {
-          //           console.log(`Successfully added this lesson to your schedule.`);
-          //         } else {
-          //           alert("Cannot add to list.")
-          //         }
-          //       },
-          //       data: JSON.stringify(data)
-          //     })
-          //   }).done( () => {
-          //     $(`#tr_${element.id}`).remove()
-          //   })
-          //
-          // })
         })
       }
     })

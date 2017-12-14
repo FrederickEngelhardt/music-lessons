@@ -10,7 +10,7 @@ $(document).ready(() => {
             $('tbody').append(`
               <tr id="tr_${element.id}"">
                 <td>${instructor.first_name}</td>
-                <td>${element.date_time}</td>
+                <td>${element.date}</td>
                 <td>${element.location}</td>
                 <td>${element.cost}</td>
                 <td> <a id="${element.id}" class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="red material-icons">remove</i></a></td>
@@ -48,7 +48,7 @@ $(document).ready(() => {
             $('tbody').append(`
               <tr id="tr_${element.id}"">
                 <td>${instructor.first_name}</td>
-                <td>${element.date_time}</td>
+                <td>${element.date}</td>
                 <td>${element.location}</td>
                 <td>${element.cost}</td>
                 <td> <a id="${element.id}" class="addLesson btn-floating btn-small waves-effect waves-light orange"><i class="red material-icons">remove</i></a></td>

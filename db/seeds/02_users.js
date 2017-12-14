@@ -32,6 +32,28 @@ exports.seed = function(knex, Promise) {
       skill_level_id: 4,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
+    },
+    {
+      id: 4,
+      first_name: 'Ashley',
+      last_name: 'Amato',
+      phone_number: '303-619-9999',
+      email_address: 'ashleyamato@gmail.com',
+      hashed_password: '$2a$10$GuYwNz4igdVNY95hXJaw8e7aBkX2nzea0yEBIOQprnn4YAdNiQ9LW',
+      skill_level_id: 4,
+      created_at: new Date('2016-06-29 14:26:16 UTC'),
+      updated_at: new Date('2016-06-29 14:26:16 UTC')
+    },
+    {
+      id: 5,
+      first_name: 'Fred',
+      last_name: 'Engelhardt',
+      phone_number: '303-619-9979',
+      email_address: 'fredshredz@gmail.com',
+      hashed_password: '$2a$10$ROmIuhz5ztHJKyvovhd7tOt7ersMaDesynTlV350VgGfcEUM5G1su',
+      skill_level_id: 4,
+      created_at: new Date('2016-06-29 14:26:16 UTC'),
+      updated_at: new Date('2016-06-29 14:26:16 UTC')
     }
   ]).then(() => {
     return knex.raw(

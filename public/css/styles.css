@@ -234,10 +234,16 @@ label {
   background-color: #FAAD00;
 }
 #createLessonBody {
-  font-size: 20px;
+  font-size:13px;
   color: white;
 }
+#new_lesson_modal {
+  width: 95%;
+}
 
+.lessonReq{
+  padding-left: 0;
+}
 /* End of home menu*/
 
 
@@ -307,7 +313,7 @@ label {
   font-size: 20px;
   background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  width: 230px;
+  width: 210px;
 }
 
 #myLessonsTable{

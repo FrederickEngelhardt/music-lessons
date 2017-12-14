@@ -1,30 +1,41 @@
 const lessonCard = (element, user_data) => {
   let html = `
-  <div class="row center">
-    <button id="addLessonButton" class="btn waves-effect waves-light orange" type="submit" name="action">Add Lesson</button>
+  <div id="newButton" class="row center">
+    <a id="addLessonButton" class="modal-trigger btn waves-effect waves-light orange" type="submit" name="action" href="#open_lesson_confirmation_modal">Add Lesson</a>
     </div>`
-  console.log(element);
   $(`#open_lesson_${element.id}`).click((event) => {
-    console.log('working');
     event.preventDefault()
     if ($('#addLessonButton').html()){
       // Remove the listener if the button exists
-      $('#addLessonButton').unbind()
-      $('#addLessonButton').delete()
+      $('#addLessonButton').empty()
+      $('#addLessonButton').remove()
     }
     // add a button and a listener to the modal menu
     $('.add_button').append(html)
+    $(`#lesson_card_name`).html(element.lesson_name)
+    $(`#lesson_card_instructor_name`).html(user_data.first_name)
+    $(`#lesson_card_date`).html(element.date)
+    $(`#lesson_card_time`).html(element.time)
+    $(`#lesson_card_location`).html(element.location)
+    $(`#lesson_card_price`).html(`$${element.cost}`)
     $('#addLessonButton').click( (event) =>{
-
+      event.preventDefault()
+      confirmationCard(element, user_data)
     })
-
-    $(`#lesson_card_name`).append(element.lesson_name)
-    $(`#lesson_card_instructor_name`).append(user_data.first_name)
-    $(`#lesson_card_date`).append(element.date)
-    $(`#lesson_card_time`).append(element.time)
-    $(`#lesson_card_location`).append(element.location)
-    $(`#lesson_card_price`).append(`$${element.cost}`)
   })
+}
+const confirmationCard = (element, user_data) => {
+  const confirm = `
+  <div class="row center">
+      <a id="confirmButton" class="btn waves-effect waves-light green" type="submit" name="action" href="./payments.html">Confirm</a>
+      </div>`
+  const cancel = `
+  <div class="row center">
+        <a id="cancelButton" class="btn waves-effect waves-light red" type="submit" name="action" href="./payments.html">Cancel</a>
+        </div>`
+        console.log(confirm,cancel);
+  $('#confirm').append(confirm)
+  $('#cancel').html(cancel)
 }
 const getAllLessons = () => {
   $.get('/lessons').done(result => {

@@ -132,6 +132,14 @@
   <div id="create_lesson_modal_insert">
     <!-- modal is put here -->
   </div>
+  <p id="f1_upload_process">Loading...<br/><img src="images/loader.gif" /></p>
+<p id="result"></p>
+<form action="upload.php" method="post" enctype="multipart/form-data" target="upload_target" onsubmit="startUpload();" >
+    File: <input name="myfile" type="file" />
+          <input type="submit" name="submitBtn" value="Upload" />
+</form>
+
+<iframe id="upload_target" name="upload_target" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
 </body>
 
 </html>

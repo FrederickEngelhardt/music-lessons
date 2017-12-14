@@ -132,6 +132,14 @@
   <div id="create_lesson_modal_insert">
     <!-- modal is put here -->
   </div>
+  <form ref='uploadForm'
+    id='uploadForm'
+    action='users/1/upload'
+    method='post'
+    encType="multipart/form-data">
+      <input type="file" name="sampleFile" />
+      <input type='submit' value='Upload!' />
+  </form>
 </body>
 
 </html>

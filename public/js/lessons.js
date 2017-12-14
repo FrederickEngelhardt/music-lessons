@@ -31,11 +31,10 @@ const confirmationCard = (element, user_data) => {
       </div>`
   const cancel = `
   <div class="row center">
-        <a id="cancelButton" class="btn waves-effect waves-light red" type="submit" name="action" href="./payments.html">Cancel</a>
+        <a id="cancelButton" class="btn waves-effect waves-light red" type="submit" name="action" >Cancel</a>
         </div>`
-        console.log(confirm,cancel);
-  $('#confirm').append(confirm)
-  $('#cancel').html(cancel)
+  $('.confirm').append(confirm)
+  $('.cancel').append(cancel)
 }
 const getAllLessons = () => {
   $.get('/lessons').done(result => {

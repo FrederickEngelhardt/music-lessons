@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  font-family: 'yukyokasho';
+  font-family: 'yukyokasho', 'arial', 'helvetica';
   font-weight: 100;
 }
 a {
@@ -127,11 +127,28 @@ nav {
 label {
   color: white;
 }
+.profBody {
+  font-size: 20px;
+}
+#profile_card {
+  color: white;
+}
+#edit_card_body {
+  color: white;
+  font-size: 20px;
+}
+#submitButton {
+  padding-top: 12px;
+  background-color: #FAAD00;
+}
 /*****index*****/
 #login_btn{
   background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 
+}
+#editButton {
+  margin-top: 25px;
 }
 #signup_btn{
   background-color: #FAAD00;
@@ -197,7 +214,7 @@ label {
   line-height: 60px;
 }
 #account_preferences_modal {
-  width: 100%;
+  width: 90%;
   max-height: 90%;
 }
 #bio-text {
@@ -217,10 +234,8 @@ label {
 .card{
   margin: 20px;
 }
-#instructorsBadge{
-  margin-bottom: -35px;
-}
-#bio {
+
+#instructor_bio {
   font-size: 16px;
   display: flex;
   justify-content: left;
@@ -233,7 +248,7 @@ label {
 }
 
 #instructorLogo{
-  top: -60px;
+  margin-top: -37px;
   font-size: 20px;
   font-weight: 300;
   background-color: #faad00;

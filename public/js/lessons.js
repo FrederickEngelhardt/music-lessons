@@ -65,7 +65,7 @@ const getAllLessons = () => {
           $('.build_tables').append(`
                 <tr id="tr_${element.id}">
                   <td>${user_data.first_name}</td>
-                  <td>${element.time}</td>
+                  <td>${element.date}</td>
                   <td>${element.location}</td>
                   <td>$${element.cost}</td>
                   <td> <a id="open_lesson_${element.id}" class="addLesson modal-trigger btn-floating btn-small waves-effect waves-light orange" href="#open_lesson_info_modal"><i class="material-icons">arrow_drop_down_circle

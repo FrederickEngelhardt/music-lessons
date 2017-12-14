@@ -129,8 +129,6 @@ const editWindow = () => {
         </thead>
         <tbody>
         <tr class="row">
-        <td class="col s3 m3 l3">Profile Picture</td>
-        <td class="col s9 m9 l9"><input type="file" class="dropify" data-max-file-size="3M"></td>
           <tr class="row">
             <td class="col s3 m3 l3">Phone Number</td>
             <td class="col s9 m9 l9">
@@ -349,7 +347,6 @@ const createLessonModal = () => {
   })
 }
 $(document).ready(() => {
-  $('.dropify').dropify()
   checkPrivileges()
   getAccount()
   $('.modal').modal({

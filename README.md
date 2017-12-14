@@ -8,8 +8,9 @@ A web application for scheduling music lessons
 
 ## Installation
 
-- Clone the repository and run `npm install`
+**Install Postgresql
 
+- Clone the repository and run `npm install`
 ```shell
 createdb music_lessons_dev
 createdb music_lessons_test

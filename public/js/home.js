@@ -162,7 +162,6 @@ const editWindow = () => {
     `
   $('#myProfile').remove()
   $('#profile_card').append(editCard)
-  $('.dropify').dropify()
   createListeners()
   $('#exit_edit').click((event) => {
     event.preventDefault()

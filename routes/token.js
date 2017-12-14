@@ -17,7 +17,7 @@ router.get('/token', (req, res) => {
 
 router.post('/token', (req, res, next) => {
   const { email_address, password } = req.body
-
+    console.log("This is your token",req.body);
   if (!email_address) {
     return next({ status: 400, message: `Email must not be blank` })
   }
@@ -34,6 +34,7 @@ router.post('/token', (req, res, next) => {
       }
       user = data
       return bcrypt.compare(password, user.hashed_password)
+      console.log('made it');
     })
     .then(() => {
       const claim = { user_id: user.id }

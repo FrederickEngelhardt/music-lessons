@@ -89,19 +89,20 @@
       <p class="modal-text">As a student, schedule lessons and add payment method. As a teacher, add lesson availability.</p>
     </div>
   </div>
-  <div id="account_preferences_modal" class="modal">
+  <div id="account_preferences_modal" class="grey darken-3 modal">
     <div class="modal-content">
       <!-- profile information is inserted in here -->
       <div id="profile_card" class="row center">
         <div class="col s12 m12 l12">
           <div class="row">
           </div>
-          <div id="myProfile" class="">
-            <table class="highlight">
+          <div id="myProfile">
+            <table>
               <thead>
                 <h3>My Profile</h3>
               </thead>
-              <tbody>
+              <input>
+              <tbody class="profBody">
                 <tr>
                   <td>First Name</td>
                   <td id="first_name"></td>
@@ -112,7 +113,6 @@
                 </tr>
                 <tr>
                   <td>Phone Number</td>
-                  <input>
                   <td id="phone_number"></td>
                 </tr>
                 <tr>
@@ -131,9 +131,6 @@
             </table>
             <div class="row center">
               <button id="editButton" class="btn waves-effect waves-light orange" type="submit" name="action">Edit Profile</button>
-            </div>
-            <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Back</a>
             </div>
           </div>
         </div>

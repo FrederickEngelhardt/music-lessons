@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
       email_address: 'nigel.flippo@gmail.com',
       hashed_password: '$2a$10$zaDd/g677uKzQEU.Z1SyH.sP53Fu5VFzZQcQTrXx4si/QPI46c/zq',
       skill_level_id: 4,
-      user_avatar: 'guitarPlayer2.png',
+      user_avatar: 'nigel.png',
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },

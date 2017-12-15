@@ -149,7 +149,7 @@ const editWindow = () => {
           <td class="col s3 m3 l3">Bio</td>
           <td class="col s9 m9 l9">
             <div class="input-field col s12">
-              <textarea id="bio-text" class="materialize-textarea"></textarea>
+              <textarea id="bio-text" class="materialize-textarea white-text"></textarea>
               <label for="bio">Tell us about yourself.</label>
             </div>
           </td>

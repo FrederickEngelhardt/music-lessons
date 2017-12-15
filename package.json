@@ -27,10 +27,12 @@
     "boom": "^7.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-fileupload": "^0.3.0",
     "jsonwebtoken": "^8.1.0",
     "knex": "^0.14.2",
     "morgan": "^1.9.0",
-    "pg": "^7.4.0"
+    "pg": "^7.4.0",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

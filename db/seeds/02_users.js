@@ -7,8 +7,9 @@ exports.seed = function(knex, Promise) {
       phone_number: '303-654-3210',
       email_address: 'spiggy6@gmail.com',
       hashed_password: '$2a$10$jrcJg8OzLrJZFbtcMXVXQ.173TA2jgo.IFhdoOCuGZvD6rOl/kPei',
-      skill_level_id: 2,
-      user_avatar: 'guitarPlayer2.png',
+      skill_level_id: 4,
+      user_avatar: 'eddie_profile.jpg',
+      bio: `I'll teach you how to drill pockets with a guitar.`,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },
@@ -21,6 +22,7 @@ exports.seed = function(knex, Promise) {
       hashed_password: '$2a$10$zaDd/g677uKzQEU.Z1SyH.sP53Fu5VFzZQcQTrXx4si/QPI46c/zq',
       skill_level_id: 4,
       user_avatar: 'swamp_monster.jpg',
+      bio: `Live in the swamp. Use Swamp Thang speakers to get gritty.`,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },
@@ -33,6 +35,7 @@ exports.seed = function(knex, Promise) {
       hashed_password: '$2a$10$zaDd/g677uKzQEU.Z1SyH.sP53Fu5VFzZQcQTrXx4si/QPI46c/zq',
       skill_level_id: 4,
       user_avatar: 'nigel.png',
+      bio: `I've been teach guitar for 15 years. Look me up Nige.`,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },
@@ -44,7 +47,8 @@ exports.seed = function(knex, Promise) {
       email_address: 'ashleyamato@gmail.com',
       hashed_password: '$2a$10$GuYwNz4igdVNY95hXJaw8e7aBkX2nzea0yEBIOQprnn4YAdNiQ9LW',
       skill_level_id: 4,
-      user_avatar: 'guitarPlayer2.png',
+      user_avatar: 'ashley_profile.png',
+      bio: `Classical guitarist. Blue grass & Green grass music.`
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },
@@ -57,6 +61,7 @@ exports.seed = function(knex, Promise) {
       hashed_password: '$2a$10$ROmIuhz5ztHJKyvovhd7tOt7ersMaDesynTlV350VgGfcEUM5G1su',
       skill_level_id: 4,
       user_avatar: 'fredster.jpg',
+      bio: `Heavy metal guitar. Used to call me the Shredster. Now I'm just the Fredster`,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     }

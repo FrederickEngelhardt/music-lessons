@@ -36,7 +36,7 @@ const instructorFields = () => {
 
 const checkPrivileges = () => {
   let skill_level
-  $.get('/token', result => {
+  $.get('/token').done( (result) => {
     const id = result.cookie.user_id
     $.get(`/users/${id}`)
       .done(data => {
@@ -107,7 +107,7 @@ const createAccountOverview = (data) => {
   })
 }
 const getAccount = () => {
-  $.get('/token', result => {
+  $.get('/token').done( (result) => {
     const id = result.cookie.user_id
     localStorage.setItem("user_id", id)
     $.get(`/users/${id}`).done((data) => {

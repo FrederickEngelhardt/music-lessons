@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  $('.logout_text').append(` ${JSON.parse(localStorage.user_profile).email_address}`)
   $.get('/token', result => {
     const id = result.cookie.user_id
     $.get('/lessons', (data) => {

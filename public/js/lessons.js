@@ -203,6 +203,7 @@ const lessonDelete = (...id) => {
   })
 }
 $(document).ready(() => {
+  $('.logout_text').append(` ${JSON.parse(localStorage.user_profile).email_address}`)
   getAllLessons()
   $('.modal').modal();
   $('.button-collapse').sideNav({

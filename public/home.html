@@ -17,8 +17,15 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="./js/home.js"></script>
+  <!-- dropify -->
+<link rel="stylesheet" href="./dropify/dist/css/dropify.css">
+<link rel="stylesheet" href="dropify/dist/fonts/dropify.eot">
+<link rel="stylesheet" href="dropify/dist/fonts/dropify.svg">
+<link rel="stylesheet" href="dropify/dist/fonts/dropify.ttf">
+<link rel="stylesheet" href="dropify/dist/fonts/dropify.woff">
+<script src="./dropify/dist/js/dropify.js"></script>
+<!-- end dropify  -->
 </head>
-
 <body>
   <nav>
     <div class="nav-wrapper">
@@ -55,7 +62,7 @@
           <text class="button-text">My Schedule</text></a>
       </div>
     </div>
-    <div class='row home-menu center'>
+    <div class="row home-menu center">
       <div class="center col s12 m12 l12">
         <a id="browse_lessons" class="home-button btn waves-effect waves-light" type="submit" name="action" href="lessons.html">
         <text>View Lessons</text></a>
@@ -132,14 +139,6 @@
   <div id="create_lesson_modal_insert">
     <!-- modal is put here -->
   </div>
-  <form ref='uploadForm'
-    id='uploadForm'
-    action='users/1/upload'
-    method='post'
-    encType="multipart/form-data">
-      <input type="file" name="sampleFile" />
-      <input type='submit' value='Upload!' />
-  </form>
 </body>
 
 </html>

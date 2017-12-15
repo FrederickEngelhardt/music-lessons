@@ -5,6 +5,7 @@
     .done(loggedIn => {
       if (loggedIn) {
         $('#logout').on('click', () => {
+          localStorage.clear()
           const options = {
             dataType: 'json',
             type: 'DELETE',
@@ -108,7 +109,9 @@ const createAccountOverview = (data) => {
 const getAccount = () => {
   $.get('/token', result => {
     const id = result.cookie.user_id
+    localStorage.setItem("user_id", id)
     $.get(`/users/${id}`).done((data) => {
+      localStorage.setItem("user_profile", data)
       $('#first_name').append(data.first_name)
       $('#last_name').append(data.last_name)
       $('#phone_number').append(data.phone_number)
@@ -121,46 +124,55 @@ const getAccount = () => {
 const editWindow = () => {
   const editCard = `
   <div id="edit_card">
-      <table>
-        <thead>
-          <h4>Edit Profile</h4>
-        </thead>
-        <input>
-        <tbody id="edit_card_body">
+    <table>
+      <thead>
+        <h4>Edit Profile</h4>
+      </thead>
+      <tbody id="edit_card_body">
         <tr class="row">
-          <tr class="row">
-            <td class="col s3 m3 l3">Phone</td>
-            <td class="col s9 m9 l9">
-              <input placeholder='XXX-XXX-XXXX' type="tel" id="phone_number">
-            </td>
-          </tr>
-          <tr class="row">
-            <td class="col s3 m3 l3">Bio</td>
-            <td class="col s9 m9 l9">
-              <div class="row">
-                <form class="col s12">
-                  <div class="row">
-                    <div placeholder='XXX-XXX-XXXX' class="input-field col s12">
-                      <textarea id="bio-text" class="materialize-textarea"></textarea>
-                      <label for="bio">Tell us about yourself.</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="row center">
-        <a href="home.html" id="submitButton" class="waves-effect waves-light btn">
-          <p>save changes</p>
-        </a>
-      </div>
+          <td class="col s3 m3 l3">Avatar</td>
+          <td class="col s9 m9 l9">
+            <form ref="uploadForm" id="uploadForm" action=users/${localStorage.user_id}/upload method="post" encType="multipart/form-data">
+                <input id="input-file-now" type="file" name="user_avatar" class="dropify"  data-show-loader="true" data-allowed-formats="portrait square" data-max-file-size="3M" />
+                <input type="submit" value="Upload!" />
+            </form>
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col s3 m3 l3">Phone</td>
+          <td class="col s9 m9 l9">
+            <input placeholder="XXX-XXX-XXXX" type="tel" id="phone_number">
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col s3 m3 l3">Bio</td>
+          <td class="col s9 m9 l9">
+            <div class="input-field col s12">
+              <textarea id="bio-text" class="materialize-textarea"></textarea>
+              <label for="bio">Tell us about yourself.</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row center">
+      <a href="home.html" id="submitButton" class="waves-effect waves-light btn">
+        <p>save changes</p>
+      </a>
     </div>
+  </div>
     `
   $('#myProfile').remove()
   $('#profile_card').append(editCard)
   createListeners()
+  $('.dropify').dropify({
+    messages: {
+    'default': 'Drag and drop a picture here or click. File size no larger than 3mb. Square images only.',
+    'replace': 'Drag and drop or click to replace',
+    'remove':  'Remove',
+    'error':   'Ooops, something wrong happended.'
+  }
+})
   $('#exit_edit').click((event) => {
     event.preventDefault()
     $.get('/token').done(data => {

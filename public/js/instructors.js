@@ -11,6 +11,7 @@ $.ajax({
      if (data) {
        for (let i = 0; i < data.length; i++) {
          if (data[i].skill_level_id === 4) {
+           console.log(data);
            $('.instructor-body').append(
              `
              <div class="row">
@@ -18,7 +19,7 @@ $.ajax({
                <div class="col s12 m6 l6">
                  <div class="instructor-card card">
                    <div class="card-image">
-                     <img src="/images/guitarPlayer2.png">
+                     <img src="${data[i].user_avatar}">
                      <span class="card-title black">${data[i].first_name} ${data[i].last_name}</span>
                    </div>
                    <div class="card-content">

@@ -46,9 +46,6 @@ const checkPrivileges = () => {
           createLessonModal()
           return
         }
-        // else {
-        //   return studentFields()
-        // }
       })
   })
 }

@@ -4,7 +4,7 @@
   $.getJSON('/token')
     .done(loggedIn => {
       if (loggedIn) {
-        $('#logout').on('click', () => {
+        $('.logout').on('click', () => {
           localStorage.clear()
           const options = {
             dataType: 'json',
@@ -111,7 +111,7 @@ const getAccount = () => {
     const id = result.cookie.user_id
     localStorage.setItem("user_id", id)
     $.get(`/users/${id}`).done((data) => {
-      localStorage.setItem("user_profile", data)
+      localStorage.setItem("user_profile", JSON.stringify(data))
       $('#first_name').append(data.first_name)
       $('#last_name').append(data.last_name)
       $('#phone_number').append(data.phone_number)
@@ -209,6 +209,11 @@ const submitEdit = () => {
       delete data[i]
     }
   }
+  if (data === {} ) {
+    $.get(`users/${localStorage.user_id}`).done( (results) =>{
+      return createAccountOverview(results)
+    })
+  }
   $.get('/token', result => {
     user_id = result.cookie.user_id
   }).done((result) => {
@@ -296,7 +301,6 @@ const createLessonModal = () => {
           <thead>
             <h3 class="white-text center">Create Lesson</h3>
           </thead>
-          <input>
           <tbody id="createLessonBody">
             <form action="alert('Lesson Created!')">
               <tr class="row">

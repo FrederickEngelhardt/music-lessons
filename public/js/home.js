@@ -289,6 +289,9 @@ const createLesson = (data) => {
       }).done((result) => {
         console.log('You just posted a lesson!')
       })
+      .fail(($xhr) => {
+        Materialize.toast('Lesson not create. Please fill out all fields.', 3000)
+      })
     })
   }
 }

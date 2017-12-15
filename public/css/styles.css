@@ -288,6 +288,14 @@ label {
 
 
 /*****lessons*****/
+#confirmButton {
+  font-size: 20px;
+  padding: 10px;
+}
+#cancelButton {
+  font-size: 20px;
+  padding: 10px;
+}
 #home_lessons_btn{
   line-height: inherit;
   margin-bottom: 80px;
@@ -330,13 +338,13 @@ label {
 
 /*****my lessons*****/
 #home_my_lessons_btn{
+  padding-top: 3px;
   line-height: 27px;
   margin-bottom: 80px;
   font-size: 20px;
   background-color: #FAAD00;
   box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   width: 210px;
-  padding-top: 3px;
 }
 
 #myLessonsTable{

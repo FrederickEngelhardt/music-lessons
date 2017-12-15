@@ -4,7 +4,7 @@ A web application for scheduling music lessons
 
 ## Heroku
 
-[Heroku App](https://q2-music-lessons.herokuapp.com/)
+[Heroku App] (https://jazzed.herokuapp.com/)
 
 ## Installation
 
@@ -61,7 +61,7 @@ bash -c 'echo "JWT_KEY="$(openssl rand -base64 64)' > .env
 - Font - YuKyokasho
 - Pod Colors - #FAAD00 - yellow
 - Background - #333030 - dark grey
-- Font color - white / black 
+- Font color - white / black
 - Logo border & background graphic - #95989A
 
 ## Wire Frames

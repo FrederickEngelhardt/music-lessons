@@ -19,7 +19,7 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 app.use(express.static('public'))
-app.use(express.static('uploads'))
+app.use(express.static('user_images'))
 app.use(fileUpload())
 
 const lessons = require('./routes/lessons')

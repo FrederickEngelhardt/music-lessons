@@ -55,44 +55,47 @@ const checkPrivileges = () => {
 /* These are all profile card functions*/
 const createAccountOverview = (data) => {
   const newCard = `
-  <div id="myProfile">
-        <table class="highlight">
-          <thead>
-            <h3>My Profile</h3>
-          </thead>
-          <input>
-          <tbody class="profBody">
-            <tr>
-              <td>First Name</td>
-              <td id="first_name"></td>
-            </tr>
-            <tr>
-              <td>Last Name</td>
-              <td id="last_name"></td>
-            </tr>
-            <tr>
-              <td>Phone Number</td>
-              <td id="phone_number"></td>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td id="email_address"></td>
-            </tr>
-            <tr>
-              <td>Skill Level</td>
-              <td id="skill_level_id"></td>
-            </tr>
-            <tr>
-              <td>Bio</td>
-              <td id="bio"></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="row center">
-          <button id="editButton" class="btn waves-effect waves-light" type="submit" name="action">Edit Profile</button>
-        </div>
+    <div id="myProfile">
+      <table>
+        <thead>
+          <div><h3 class="left">My Profile</h3></div>
+          <div id="show_avatar_image">
+          <img src="${data.user_avatar}" height="250px" width="250px" class="center">
+          </div>
+      </thead>
+        <tbody class="profBody">
+          <tr>
+            <td>First Name</td>
+            <td id="first_name"></td>
+          </tr>
+          <tr>
+            <td>Last Name</td>
+            <td id="last_name"></td>
+          </tr>
+          <tr>
+            <td>Phone Number</td>
+            <td id="phone_number"></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td id="email_address"></td>
+          </tr>
+          <tr>
+            <td>Skill Level</td>
+            <td id="skill_level_id"></td>
+          </tr>
+          <tr>
+            <td>Bio</td>
+            <td id="bio"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row center">
+        <button id="editButton" class="btn waves-effect waves-light" type="submit" name="action">Edit Profile</button>
       </div>
-      `
+    </div>
+        `
+
   $('#edit_card').remove()
   $('#profile_card').append(newCard)
   $('#first_name').append(data.first_name)
@@ -118,6 +121,7 @@ const getAccount = () => {
       $('#email_address').append(data.email_address)
       $('#skill_level_id').append(data.skill_level_id)
       $('#bio').append(data.bio)
+      $('#show_avatar_image').append(`<img src="${data.user_avatar}" height="250px" width="250px" class="center">`)
     })
   })
 }
@@ -132,10 +136,10 @@ const editWindow = () => {
         <tr class="row">
           <td class="col s3 m3 l3">Avatar</td>
           <td class="col s9 m9 l9">
-            <form ref="uploadForm" id="uploadForm" action=users/${localStorage.user_id}/upload method="post" encType="multipart/form-data">
+          <iframe width="0" height="0" border="0" name="dummyframe" id="dummyframe" style="display:none"></iframe>
+            <form id="submit_avatar_form" action="users/${localStorage.user_id}/upload" method="post" encType="multipart/form-data" target="dummyframe" >
                 <input id="input-file-now" type="file" name="user_avatar" class="dropify"  data-show-loader="true" data-allowed-formats="portrait square" data-max-file-size="3M" />
-                <input type="submit" value="Upload!" />
-            </form>
+                </form>
           </td>
         </tr>
         <tr class="row">
@@ -156,23 +160,37 @@ const editWindow = () => {
       </tbody>
     </table>
     <div class="row center">
-      <a href="home.html" id="submitButton" class="waves-effect waves-light btn">
+      <a id="submitButton" type="submit" class="modal-triger modal-close waves-effect waves-light btn">
         <p>save changes</p>
       </a>
     </div>
+  <a href="#!" id="exit_edit" class="white-text waves-effect waves-green btn-small">Back</a>
   </div>
     `
+  // note the above html an iframe was used to prevent the submit button from redirecting the form
+  $('#uploadForm2').submit(function(event) {
+    event.preventDefault()
+    alert('object updated')
+  })
+  $('#uploadForm').submit(function(event) {
+    event.preventDefault()
+    alert('object updated')
+  })
   $('#myProfile').remove()
   $('#profile_card').append(editCard)
-  createListeners()
+  $('#submitButton').click((event) => {
+    event.preventDefault()
+    $('#submit_avatar_form').submit()
+    submitEdit()
+  })
   $('.dropify').dropify({
     messages: {
-    'default': 'Drag and drop a picture here or click. File size no larger than 3mb. Square images only.',
-    'replace': 'Drag and drop or click to replace',
-    'remove':  'Remove',
-    'error':   'Ooops, something wrong happended.'
-  }
-})
+      'default': 'Drag and drop a picture here or click. File size no larger than 3mb. Square images only.',
+      'replace': 'Drag and drop or click to replace',
+      'remove': 'Remove',
+      'error': 'Ooops, something wrong happended.'
+    }
+  })
   $('#exit_edit').click((event) => {
     event.preventDefault()
     $.get('/token').done(data => {
@@ -353,6 +371,9 @@ const createLessonModal = () => {
 $(document).ready(() => {
   checkPrivileges()
   getAccount()
+  $("#input-file-now").click(function(event) {
+    event.preventDefault()
+  })
   $('.modal').modal({
     dismissible: true, // Modal can be dismissed by clicking outside of the modal
     opacity: .5, // Opacity of modal background

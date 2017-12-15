@@ -1,7 +1,7 @@
 const lessonCard = (element, user_data) => {
   let html = `
   <div id="newButton" class="row center">
-    <a id="addLessonButton" class="modal-trigger btn waves-effect waves-light" type="submit" name="action" href="#open_lesson_confirmation_modal">Add Lesson</a>
+    <a id="addLessonButton" class="modal-trigger btn waves-effect waves-light" type="submit" name="action" href="#open_lesson_confirmation_modal"><div id="lesson_add_text">Add Lesson</div></a>
     </div>`
   $(`#open_lesson_${element.id}`).click((event) => {
     event.preventDefault()

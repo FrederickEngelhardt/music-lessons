@@ -306,6 +306,9 @@ label {
 }
 
 #addLessonButton{
+  position: relative;
+  top: 10px;
+  width: 201px;
   padding-top: 9px;
   font-size: 20px;
   background-color: #FAAD00;

@@ -48,7 +48,7 @@ exports.seed = function(knex, Promise) {
       hashed_password: '$2a$10$GuYwNz4igdVNY95hXJaw8e7aBkX2nzea0yEBIOQprnn4YAdNiQ9LW',
       skill_level_id: 4,
       user_avatar: 'ashley_profile.png',
-      bio: `Classical guitarist. Blue grass & Green grass music.`
+      bio: `Classical guitarist. Blue grass & Green grass music.`,
       created_at: new Date('2016-06-29 14:26:16 UTC'),
       updated_at: new Date('2016-06-29 14:26:16 UTC')
     },
